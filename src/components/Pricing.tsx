@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiCheck } from 'react-icons/fi';
+import { FiCheck, FiStar } from 'react-icons/fi';
 
 const Pricing = () => {
   const packages = [
@@ -14,6 +14,7 @@ const Pricing = () => {
         'Emisja na wybranych trasach',
       ],
       popular: false,
+      gradient: 'from-primary-600 to-primary-500',
     },
     {
       name: 'Biznes',
@@ -27,6 +28,7 @@ const Pricing = () => {
         'Priorytetowa obsługa',
       ],
       popular: true,
+      gradient: 'from-primary-600 to-primary-500',
     },
     {
       name: 'Enterprise',
@@ -40,6 +42,7 @@ const Pricing = () => {
         'Indywidualna wycena',
       ],
       popular: false,
+      gradient: 'from-primary-600 to-primary-500',
     },
   ];
 
@@ -51,28 +54,34 @@ const Pricing = () => {
   };
 
   return (
-    <section id="pricing" className="section-padding bg-steel-900">
+    <section id="pricing" className="section-padding relative">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <span className="inline-block px-5 py-2 bg-wood-700 text-white uppercase text-xs tracking-wider font-mono border-2 border-wood-600 mb-4">
-            Cennik
-          </span>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
-            Cennik
+          <motion.span 
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-block px-5 py-2 rounded-full glass mb-6"
+          >
+            <span className="text-sm font-medium text-dark-200 uppercase tracking-wider">
+              Cennik
+            </span>
+          </motion.span>
+          <h2 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
+            Wybierz <span className="gradient-text">Pakiet</span> Dla Siebie
           </h2>
-          <div className="h-1 bg-wood-600 w-24 mx-auto mb-6" />
-          <p className="text-lg text-steel-300">
+          <p className="text-lg md:text-xl text-dark-100">
             Proste pakiety dostosowane do Twoich potrzeb
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-10">
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
@@ -80,57 +89,81 @@ const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15, duration: 0.6 }}
-              whileHover={{ y: -4 }}
-              className={`relative card bg-steel-800 ${
-                pkg.popular 
-                  ? 'border-2 border-wood-600' 
-                  : 'border-2 border-steel-700'
+              whileHover={{ y: -8, scale: 1.02 }}
+              className={`relative card group ${
+                pkg.popular ? 'ring-2 ring-primary-500' : ''
               }`}
             >
               {pkg.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-wood-700 text-white px-4 py-1 uppercase text-xs tracking-wider font-mono border-2 border-wood-600">
-                  Najpopularniejszy
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute -top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full flex items-center gap-2"
+                  style={{
+                    background: 'linear-gradient(135deg, #0891b2 0%, #0e7490 100%)',
+                    boxShadow: '0 4px 20px rgba(8, 145, 178, 0.5)',
+                  }}
+                >
+                  <FiStar className="w-4 h-4 text-white" />
+                  <span className="text-sm font-bold text-white uppercase tracking-wider">
+                    Najpopularniejszy
+                  </span>
+                </motion.div>
               )}
 
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-heading font-bold text-white mb-3 uppercase tracking-tight">
+              {/* Gradient background on hover */}
+              <motion.div
+                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
+                style={{
+                  background: `linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(14, 116, 144, 0.05) 100%)`,
+                }}
+              />
+
+              <div className={`text-center mb-8 ${pkg.popular ? 'mt-4' : ''}`}>
+                <h3 className="text-3xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
                   {pkg.name}
                 </h3>
                 <div>
-                  <div className={`font-bold text-white font-mono ${
-                    pkg.price.length > 10 ? 'text-3xl' : 'text-5xl'
+                  <div className={`font-bold font-mono mb-2 ${
+                    pkg.price.length > 10 ? 'text-4xl' : 'text-6xl'
                   }`}>
-                    {pkg.price}
+                    <span className="gradient-text">{pkg.price}</span>
                   </div>
                   {pkg.period && (
-                    <div className="text-steel-300 text-sm mt-2">{pkg.period}</div>
+                    <div className="text-dark-400 text-sm uppercase tracking-wider">{pkg.period}</div>
                   )}
                 </div>
               </div>
 
-              <ul className="space-y-3 mb-6">
+              <ul className="space-y-4 mb-8">
                 {pkg.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-3">
-                    <div className="w-5 h-5 bg-wood-700 border-2 border-wood-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <FiCheck className="w-3 h-3 text-white" />
+                  <motion.li
+                    key={featureIndex}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.15 + featureIndex * 0.05 }}
+                    className="flex items-start gap-3"
+                  >
+                    <div className={`w-6 h-6 rounded-lg bg-gradient-to-br ${pkg.gradient} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                      <FiCheck className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-steel-300 text-sm">{feature}</span>
-                  </li>
+                    <span className="text-dark-100 text-base leading-relaxed">{feature}</span>
+                  </motion.li>
                 ))}
               </ul>
 
               <motion.button
                 onClick={scrollToContact}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`w-full py-4 font-semibold transition-colors border-2 uppercase tracking-wider text-sm ${
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`w-full py-4 font-semibold transition-all duration-300 rounded-lg uppercase tracking-wider text-sm ${
                   pkg.popular
-                    ? 'bg-wood-700 text-white border-wood-600 hover:bg-wood-600'
-                    : 'bg-steel-700 text-white border-steel-600 hover:bg-steel-600'
+                    ? 'btn-primary'
+                    : 'border-2 border-dark-700 text-white hover:border-primary-500 hover:bg-primary-500/10'
                 }`}
               >
-                Wybierz Pakiet
+                <span>Wybierz Pakiet</span>
               </motion.button>
             </motion.div>
           ))}
@@ -140,15 +173,20 @@ const Pricing = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-center"
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-center glass rounded-xl p-8 max-w-2xl mx-auto"
         >
-          <p className="text-steel-300 mb-4">Potrzebujesz indywidualnej oferty?</p>
+          <h3 className="text-2xl font-heading font-bold text-white mb-4">
+            Potrzebujesz indywidualnej oferty?
+          </h3>
+          <p className="text-dark-100 mb-6">
+            Skontaktuj się z nami, a przygotujemy ofertę dostosowaną do Twoich potrzeb
+          </p>
           <motion.button
             onClick={scrollToContact}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="bg-transparent text-white px-8 py-4 font-semibold border-2 border-wood-600 hover:bg-wood-700 transition-all duration-500 uppercase tracking-wider text-sm"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="btn-secondary"
           >
             Skontaktuj Się
           </motion.button>

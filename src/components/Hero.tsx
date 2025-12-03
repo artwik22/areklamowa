@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiZap } from 'react-icons/fi';
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -12,25 +12,72 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-steel-900 via-steel-800 to-steel-900"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute top-1/4 -left-1/4 w-96 h-96 rounded-full opacity-10"
+          style={{
+            background: 'radial-gradient(circle, rgba(8, 145, 178, 0.3) 0%, transparent 70%)',
+            filter: 'blur(80px)',
+          }}
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            rotate: [360, 180, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute bottom-1/4 -right-1/4 w-96 h-96 rounded-full opacity-10"
+          style={{
+            background: 'radial-gradient(circle, rgba(8, 145, 178, 0.3) 0%, transparent 70%)',
+            filter: 'blur(80px)',
+          }}
+        />
+      </div>
+
       <div className="container-custom relative z-10 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center"
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto text-center"
         >
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
+          >
+            <FiZap className="w-4 h-4 text-primary-500" />
+            <span className="text-sm font-medium text-dark-200">Skuteczna Reklama w Autobusach</span>
+          </motion.div>
+
           <div className="text-white">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight"
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 leading-tight"
             >
               Zwiększ Sprzedaż
               <br />
-              <span className="text-wood-400">
+              <span className="gradient-text">
                 Reklamując Się w Autobusach
               </span>
             </motion.h1>
@@ -38,16 +85,17 @@ const Hero = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-xl md:text-2xl mb-6 text-steel-200 font-light leading-relaxed"
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-xl md:text-2xl mb-6 text-dark-100 font-light leading-relaxed"
             >
-              Dotrzyj do tysięcy pasażerów każdego dnia
+              Dotrzyj do <span className="text-primary-500 font-semibold">tysięcy pasażerów</span> każdego dnia
             </motion.p>
+            
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-lg mb-10 text-steel-300 leading-relaxed max-w-2xl mx-auto"
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="text-lg mb-12 text-dark-200 leading-relaxed max-w-3xl mx-auto"
             >
               Twoja reklama na monitorach w autobusach będzie widoczna dla tysięcy potencjalnych klientów. 
               Skuteczna forma reklamy, która działa 24/7. Przygotujemy dla Ciebie profesjonalną reklamę.
@@ -56,31 +104,59 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <motion.button
                 onClick={() => scrollToSection('#pricing')}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="bg-white text-steel-900 px-10 py-5 font-semibold hover:bg-steel-50 transition-colors border-2 border-white uppercase tracking-wider text-sm flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-primary flex items-center gap-2 group"
               >
-                Zobacz Cennik
-                <FiArrowRight />
+                <span>Zobacz Cennik</span>
+                <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
 
               <motion.button
                 onClick={() => scrollToSection('#contact')}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="bg-wood-700 text-white px-10 py-5 font-semibold hover:bg-wood-600 transition-colors border-2 border-wood-600 uppercase tracking-wider text-sm"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-secondary"
               >
                 Skontaktuj Się
               </motion.button>
             </motion.div>
+
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="grid grid-cols-3 gap-8 mt-20 max-w-3xl mx-auto"
+            >
+              {[
+                { value: '1000+', label: 'Pasażerów dziennie' },
+                { value: '8', label: 'Obszarów działania' },
+                { value: '24/7', label: 'Emisja reklam' },
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.9 + index * 0.1, duration: 0.5 }}
+                  className="glass rounded-2xl p-6"
+                >
+                  <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-dark-300">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </motion.div>
       </div>
+
     </section>
   );
 };

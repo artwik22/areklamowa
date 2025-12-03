@@ -1,4 +1,5 @@
 import { FiFacebook, FiInstagram, FiLinkedin, FiMail } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,10 +12,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: FiFacebook, href: '#', label: 'Facebook' },
-    { icon: FiInstagram, href: '#', label: 'Instagram' },
-    { icon: FiLinkedin, href: '#', label: 'LinkedIn' },
-    { icon: FiMail, href: 'mailto:kontakt@agencja-reklamowa.pl', label: 'Email' },
+    { icon: FiFacebook, href: '#', label: 'Facebook', color: 'hover:text-primary-400' },
+    { icon: FiInstagram, href: '#', label: 'Instagram', color: 'hover:text-primary-400' },
+    { icon: FiLinkedin, href: '#', label: 'LinkedIn', color: 'hover:text-primary-400' },
+    { icon: FiMail, href: 'mailto:kontakt@agencja-reklamowa.pl', label: 'Email', color: 'hover:text-primary-400' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -25,103 +26,155 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-steel-900 text-steel-300 border-t-2 border-steel-800">
-      <div className="container-custom py-10">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+    <footer className="relative border-t border-white/10">
+      {/* Gradient overlay */}
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          background: 'linear-gradient(180deg, transparent 0%, rgba(8, 145, 178, 0.05) 100%)',
+        }}
+      />
+
+      <div className="container-custom py-16 relative z-10">
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
-          <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-wood-700 border-2 border-wood-600 flex items-center justify-center">
-                <span className="text-white font-bold text-xl font-mono">A</span>
+          <div className="md:col-span-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center space-x-3 mb-6"
+            >
+              <div 
+                className="w-14 h-14 rounded-lg flex items-center justify-center"
+                style={{
+                  background: 'linear-gradient(135deg, #0891b2 0%, #0e7490 100%)',
+                  boxShadow: '0 4px 15px rgba(8, 145, 178, 0.4)',
+                }}
+              >
+                <span className="text-white font-bold text-2xl font-mono">A</span>
               </div>
-              <span className="text-lg font-heading font-bold text-white uppercase tracking-tight">
+              <span className="text-2xl font-heading font-bold text-white uppercase tracking-tight">
                 Agencja Reklamowa
               </span>
-            </div>
-            <p className="text-steel-400 mb-4 text-sm">
+            </motion.div>
+            <p className="text-dark-100 mb-6 text-lg leading-relaxed max-w-md">
               Wynajmujemy miejsca reklamowe na monitorach w autobusach.
               Przygotowujemy również profesjonalne reklamy dla Twojej firmy.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
-                <a
+                <motion.a
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 bg-steel-800 border-2 border-steel-700 flex items-center justify-center hover:bg-steel-700 transition-colors duration-300"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className={`w-12 h-12 rounded-lg glass flex items-center justify-center text-dark-100 hover:text-primary-500 transition-all duration-300`}
                 >
                   <social.icon className="w-5 h-5" />
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-heading font-bold mb-4 uppercase tracking-tight text-sm">
+            <h3 className="text-white font-heading font-bold mb-6 uppercase tracking-tight text-lg">
               Nawigacja
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {navLinks.map((link, index) => (
-                <li key={index}>
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-steel-400 hover:text-white transition-colors duration-200 text-sm"
+                    className="text-dark-100 hover:text-white transition-colors duration-200 text-base hover:translate-x-1 inline-block"
                   >
-                    {link.name}
+                    → {link.name}
                   </button>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-heading font-bold mb-4 uppercase tracking-tight text-sm">
+            <h3 className="text-white font-heading font-bold mb-6 uppercase tracking-tight text-lg">
               Kontakt
             </h3>
-            <ul className="space-y-2">
-              <li>
+            <ul className="space-y-4">
+              <motion.li
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
                 <a
                   href="mailto:kontakt@agencja-reklamowa.pl"
-                  className="text-steel-400 hover:text-white transition-colors duration-200 text-sm"
+                  className="text-dark-100 hover:text-white transition-colors duration-200 text-base block"
                 >
                   kontakt@agencja-reklamowa.pl
                 </a>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
                 <a
                   href="tel:+48123456789"
-                  className="text-steel-400 hover:text-white transition-colors duration-200 text-sm"
+                  className="text-dark-100 hover:text-white transition-colors duration-200 text-base block"
                 >
                   +48 123 456 789
                 </a>
-              </li>
-              <li className="text-steel-400 text-sm">Pomorskie, Polska</li>
+              </motion.li>
+              <motion.li
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-dark-100 text-base"
+              >
+                Pomorskie, Polska
+              </motion.li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t-2 border-steel-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-steel-400 text-xs font-mono">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p className="text-dark-400 text-sm font-mono">
             © {currentYear} Agencja Reklamowa. Wszelkie prawa zastrzeżone.
           </p>
-          <div className="flex gap-6 text-xs">
+          <div className="flex gap-8 text-sm">
             <a
               href="#"
-              className="text-steel-400 hover:text-white transition-colors duration-200 uppercase tracking-wider"
+              className="text-dark-400 hover:text-white transition-colors duration-200 uppercase tracking-wider"
             >
               Polityka Prywatności
             </a>
             <a
               href="#"
-              className="text-steel-400 hover:text-white transition-colors duration-200 uppercase tracking-wider"
+              className="text-dark-400 hover:text-white transition-colors duration-200 uppercase tracking-wider"
             >
               Regulamin
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

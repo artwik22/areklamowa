@@ -33,10 +33,10 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-steel-900/98 backdrop-blur-md border-b-2 border-steel-700 shadow-lg'
-          : 'bg-steel-900/95 backdrop-blur-sm border-b-2 border-steel-700'
+          ? 'glass shadow-2xl'
+          : 'bg-transparent'
       }`}
     >
       <nav className="container-custom">
@@ -52,9 +52,13 @@ const Header = () => {
             <motion.div
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
-              className="w-12 h-12 bg-wood-700 border-2 border-wood-600 flex items-center justify-center wood-texture"
+              className="w-12 h-12 rounded-lg flex items-center justify-center relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, #0891b2 0%, #0e7490 100%)',
+                boxShadow: '0 4px 15px rgba(8, 145, 178, 0.4)',
+              }}
             >
-              <span className="text-white font-bold text-xl font-mono">A</span>
+              <span className="text-white font-bold text-2xl font-mono relative z-10">A</span>
             </motion.div>
             <span className="text-xl font-heading font-bold text-white uppercase tracking-tight">
               Agencja Reklamowa
@@ -62,7 +66,7 @@ const Header = () => {
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
@@ -70,16 +74,17 @@ const Header = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -2, scale: 1.05 }}
+                whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-steel-300 hover:text-white font-medium transition-colors duration-300 px-4 py-2 uppercase text-sm tracking-wider border-2 border-transparent hover:border-wood-600 relative group"
+                className="text-dark-200 hover:text-white font-medium transition-all duration-300 px-5 py-2.5 uppercase text-sm tracking-wider rounded-lg relative group"
               >
                 {item.name}
                 <motion.div
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-wood-600"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity -z-10"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    backdropFilter: 'blur(10px)',
+                  }}
                 />
               </motion.button>
             ))}
@@ -92,7 +97,7 @@ const Header = () => {
               transition={{ delay: 0.4 }}
               className="btn-primary ml-4"
             >
-              Skontaktuj Się
+              <span>Skontaktuj Się</span>
             </motion.button>
           </div>
 
@@ -101,7 +106,7 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="md:hidden text-white p-2 border-2 border-steel-700 hover:border-wood-600 transition-colors"
+            className="md:hidden text-white p-2.5 rounded-lg glass"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
@@ -138,7 +143,7 @@ const Header = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden pb-4 border-t-2 border-steel-700 mt-4 overflow-hidden bg-steel-900"
+              className="md:hidden pb-4 mt-4 overflow-hidden glass rounded-2xl"
             >
               <motion.div
                 variants={{
@@ -152,7 +157,7 @@ const Header = () => {
                 }}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-col space-y-2 pt-4"
+                className="flex flex-col space-y-2 p-4"
               >
                 {navItems.map((item) => (
                   <motion.button
@@ -164,7 +169,7 @@ const Header = () => {
                     }}
                     whileHover={{ x: 4 }}
                     whileTap={{ scale: 0.95 }}
-                    className="text-left text-steel-300 hover:text-white font-medium transition-colors duration-200 px-4 py-2 uppercase text-sm tracking-wider border-2 border-transparent hover:border-wood-600"
+                    className="text-left text-dark-200 hover:text-white font-medium transition-colors duration-200 px-4 py-3 uppercase text-sm tracking-wider rounded-lg hover:bg-white/5"
                   >
                     {item.name}
                   </motion.button>
@@ -179,7 +184,7 @@ const Header = () => {
                   whileTap={{ scale: 0.98 }}
                   className="btn-primary w-full mt-2"
                 >
-                  Skontaktuj Się
+                  <span>Skontaktuj Się</span>
                 </motion.button>
               </motion.div>
             </motion.div>
