@@ -18,7 +18,6 @@ const Header = () => {
     { name: 'Co Oferujemy', href: '#services' },
     { name: 'Gdzie Działamy', href: '#coverage' },
     { name: 'Cennik', href: '#pricing' },
-    { name: 'Kontakt', href: '#contact' },
   ];
 
   const scrollToSection = (href: string) => {
