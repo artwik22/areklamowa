@@ -17,7 +17,7 @@ const Pricing = () => {
     },
     {
       name: 'Biznes',
-      price: '800 zł',
+      price: '900 zł',
       period: '2 miesiące',
       features: [
         'Reklama na monitorach w autobusach',
@@ -51,7 +51,7 @@ const Pricing = () => {
   };
 
   return (
-    <section id="pricing" className="section-padding bg-white">
+    <section id="pricing" className="section-padding bg-steel-900">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -63,11 +63,11 @@ const Pricing = () => {
           <span className="inline-block px-5 py-2 bg-wood-700 text-white uppercase text-xs tracking-wider font-mono border-2 border-wood-600 mb-4">
             Cennik
           </span>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-steel-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
             Cennik
           </h2>
           <div className="h-1 bg-wood-600 w-24 mx-auto mb-6" />
-          <p className="text-lg text-steel-600">
+          <p className="text-lg text-steel-300">
             Proste pakiety dostosowane do Twoich potrzeb
           </p>
         </motion.div>
@@ -81,30 +81,30 @@ const Pricing = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.15, duration: 0.6 }}
               whileHover={{ y: -4 }}
-              className={`relative card bg-white ${
+              className={`relative card bg-steel-800 ${
                 pkg.popular 
-                  ? 'border-2 border-steel-900' 
-                  : 'border-2 border-steel-300'
+                  ? 'border-2 border-wood-600' 
+                  : 'border-2 border-steel-700'
               }`}
             >
               {pkg.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-steel-900 text-white px-4 py-1 uppercase text-xs tracking-wider font-mono border-2 border-steel-800">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-wood-700 text-white px-4 py-1 uppercase text-xs tracking-wider font-mono border-2 border-wood-600">
                   Najpopularniejszy
                 </div>
               )}
 
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-heading font-bold text-steel-900 mb-3 uppercase tracking-tight">
+                <h3 className="text-2xl font-heading font-bold text-white mb-3 uppercase tracking-tight">
                   {pkg.name}
                 </h3>
                 <div>
-                  <div className={`font-bold text-steel-900 font-mono ${
+                  <div className={`font-bold text-white font-mono ${
                     pkg.price.length > 10 ? 'text-3xl' : 'text-5xl'
                   }`}>
                     {pkg.price}
                   </div>
                   {pkg.period && (
-                    <div className="text-steel-600 text-sm mt-2">{pkg.period}</div>
+                    <div className="text-steel-300 text-sm mt-2">{pkg.period}</div>
                   )}
                 </div>
               </div>
@@ -112,10 +112,10 @@ const Pricing = () => {
               <ul className="space-y-3 mb-6">
                 {pkg.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
-                    <div className="w-5 h-5 bg-steel-800 border-2 border-steel-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-5 h-5 bg-wood-700 border-2 border-wood-600 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <FiCheck className="w-3 h-3 text-white" />
                     </div>
-                    <span className="text-steel-700 text-sm">{feature}</span>
+                    <span className="text-steel-300 text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -126,8 +126,8 @@ const Pricing = () => {
                 whileTap={{ scale: 0.98 }}
                 className={`w-full py-4 font-semibold transition-colors border-2 uppercase tracking-wider text-sm ${
                   pkg.popular
-                    ? 'bg-steel-900 text-white border-steel-900 hover:bg-steel-800'
-                    : 'bg-steel-100 text-steel-900 border-steel-300 hover:bg-steel-200'
+                    ? 'bg-wood-700 text-white border-wood-600 hover:bg-wood-600'
+                    : 'bg-steel-700 text-white border-steel-600 hover:bg-steel-600'
                 }`}
               >
                 Wybierz Pakiet
@@ -143,12 +143,12 @@ const Pricing = () => {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-steel-600 mb-4">Potrzebujesz indywidualnej oferty?</p>
+          <p className="text-steel-300 mb-4">Potrzebujesz indywidualnej oferty?</p>
           <motion.button
             onClick={scrollToContact}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="btn-secondary"
+            className="bg-transparent text-white px-8 py-4 font-semibold border-2 border-wood-600 hover:bg-wood-700 transition-all duration-500 uppercase tracking-wider text-sm"
           >
             Skontaktuj Się
           </motion.button>

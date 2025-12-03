@@ -35,8 +35,8 @@ const Header = () => {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-steel-50/98 backdrop-blur-md border-b-2 border-steel-300 shadow-lg'
-          : 'bg-steel-50/95 backdrop-blur-sm border-b-2 border-steel-200'
+          ? 'bg-steel-900/98 backdrop-blur-md border-b-2 border-steel-700 shadow-lg'
+          : 'bg-steel-900/95 backdrop-blur-sm border-b-2 border-steel-700'
       }`}
     >
       <nav className="container-custom">
@@ -52,11 +52,11 @@ const Header = () => {
             <motion.div
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
-              className="w-12 h-12 bg-wood-700 border-2 border-steel-800 flex items-center justify-center wood-texture"
+              className="w-12 h-12 bg-wood-700 border-2 border-wood-600 flex items-center justify-center wood-texture"
             >
               <span className="text-white font-bold text-xl font-mono">A</span>
             </motion.div>
-            <span className="text-xl font-heading font-bold text-steel-900 uppercase tracking-tight">
+            <span className="text-xl font-heading font-bold text-white uppercase tracking-tight">
               Agencja Reklamowa
             </span>
           </motion.div>
@@ -72,7 +72,7 @@ const Header = () => {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -2, scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-steel-700 hover:text-steel-900 font-medium transition-colors duration-300 px-4 py-2 uppercase text-sm tracking-wider border-2 border-transparent hover:border-steel-800 relative group"
+                className="text-steel-300 hover:text-white font-medium transition-colors duration-300 px-4 py-2 uppercase text-sm tracking-wider border-2 border-transparent hover:border-wood-600 relative group"
               >
                 {item.name}
                 <motion.div
@@ -101,7 +101,7 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="md:hidden text-steel-700 p-2 border-2 border-steel-300 hover:border-steel-800 transition-colors"
+            className="md:hidden text-white p-2 border-2 border-steel-700 hover:border-wood-600 transition-colors"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
@@ -138,7 +138,7 @@ const Header = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden pb-4 border-t-2 border-steel-300 mt-4 overflow-hidden"
+              className="md:hidden pb-4 border-t-2 border-steel-700 mt-4 overflow-hidden bg-steel-900"
             >
               <motion.div
                 variants={{
@@ -164,7 +164,7 @@ const Header = () => {
                     }}
                     whileHover={{ x: 4 }}
                     whileTap={{ scale: 0.95 }}
-                    className="text-left text-steel-700 hover:text-steel-900 font-medium transition-colors duration-200 px-4 py-2 uppercase text-sm tracking-wider border-2 border-transparent hover:border-steel-800"
+                    className="text-left text-steel-300 hover:text-white font-medium transition-colors duration-200 px-4 py-2 uppercase text-sm tracking-wider border-2 border-transparent hover:border-wood-600"
                   >
                     {item.name}
                   </motion.button>
