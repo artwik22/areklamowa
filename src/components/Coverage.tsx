@@ -23,16 +23,6 @@ const Coverage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <motion.span 
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-block px-5 py-2 rounded-full glass mb-6"
-          >
-            <span className="text-sm font-medium text-dark-200 uppercase tracking-wider">
-              8
-            </span>
-          </motion.span>
           <h2 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
             Gdzie <span className="gradient-text">Działamy</span>
           </h2>

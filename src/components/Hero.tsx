@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiZap } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -57,17 +57,6 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto text-center"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
-          >
-            <FiZap className="w-4 h-4 text-primary-500" />
-            <span className="text-sm font-medium text-dark-200">Skuteczna Reklama w Autobusach</span>
-          </motion.div>
-
           <div className="text-white">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -78,7 +67,7 @@ const Hero = () => {
               Zwiększ Sprzedaż
               <br />
               <span className="gradient-text">
-                Reklamując Się w Autobusach
+                Reklamą w Autobusach
               </span>
             </motion.h1>
 
@@ -98,7 +87,7 @@ const Hero = () => {
               className="text-lg mb-12 text-dark-200 leading-relaxed max-w-3xl mx-auto"
             >
               Twoja reklama na monitorach w autobusach będzie widoczna dla tysięcy potencjalnych klientów. 
-              Skuteczna forma reklamy, która działa 24/7. Przygotujemy dla Ciebie profesjonalną reklamę.
+              Skuteczna forma dotarcia do lokalnej społeczności. Oferujemy również profesjonalne przygotowanie reklamy.
             </motion.p>
 
             <motion.div
@@ -135,9 +124,9 @@ const Hero = () => {
               className="grid grid-cols-3 gap-8 mt-20 max-w-3xl mx-auto"
             >
               {[
-                { value: '1000+', label: 'Pasażerów dziennie' },
-                { value: '8', label: 'Obszarów działania' },
-                { value: '24/7', label: 'Emisja reklam' },
+                { value: '1000+', label: 'Pasażerów codziennie' },
+                { value: '8', label: 'Miejscowości' },
+                { value: '18h', label: 'Czas emisji dziennie' },
               ].map((stat, index) => (
                 <motion.div
                   key={index}

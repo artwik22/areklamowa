@@ -7,14 +7,14 @@ const Services = () => {
       icon: FiMonitor,
       title: 'Wynajem Miejsc Reklamowych',
       description:
-        'Twoja reklama na monitorach w autobusach będzie widoczna dla tysięcy pasażerów każdego dnia. Skuteczna forma dotarcia do lokalnych klientów.',
+        'Twoja reklama na monitorach w autobusach będzie widoczna dla tysięcy pasażerów każdego dnia. To skuteczna forma dotarcia do lokalnych klientów w ich codziennych podróżach.',
       gradient: 'from-primary-600 to-primary-500',
     },
     {
       icon: FiPenTool,
       title: 'Projektowanie Reklam',
       description:
-        'Przygotujemy profesjonalną reklamę, która przyciągnie uwagę i zwiększy rozpoznawalność Twojej marki. Stworzymy projekt dostosowany do formatów wyświetlaczy.',
+        'Przygotujemy profesjonalną reklamę, która przyciągnie uwagę pasażerów i zwiększy rozpoznawalność Twojej marki. Projekt będzie dostosowany do formatów wyświetlaczy w autobusach.',
       gradient: 'from-primary-600 to-primary-500',
     },
   ];
@@ -40,10 +40,10 @@ const Services = () => {
             </span>
           </motion.span>
           <h2 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
-            Dlaczego Warto <span className="gradient-text">Reklamować Się</span> w Autobusach?
+            Dlaczego Warto Wybrać <span className="gradient-text">Reklamę w Autobusach</span>?
           </h2>
           <p className="text-lg md:text-xl text-dark-100 max-w-3xl mx-auto leading-relaxed">
-            Skuteczna reklama, która dociera do tysięcy potencjalnych klientów każdego dnia
+            Skuteczna forma reklamy, która dociera do tysięcy potencjalnych klientów każdego dnia
           </p>
         </motion.div>
 

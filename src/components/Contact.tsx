@@ -50,7 +50,7 @@ const Contact = () => {
             Skontaktuj Się <span className="gradient-text">Z Nami</span>
           </h2>
           <p className="text-lg md:text-xl text-dark-100 max-w-2xl mx-auto">
-            Skontaktuj się z nami telefonicznie lub mailowo
+            Zadzwoń lub napisz do nas - chętnie odpowiemy na Twoje pytania
           </p>
         </motion.div>
 

@@ -10,7 +10,7 @@ const Pricing = () => {
       features: [
         'Reklama na monitorach w autobusach',
         'Wyświetlanie przez cały miesiąc',
-        'Możliwość przygotowania reklamy',
+        'Możliwość przygotowania projektu reklamy',
         'Emisja na wybranych trasach',
       ],
       popular: false,
@@ -23,9 +23,9 @@ const Pricing = () => {
       features: [
         'Reklama na monitorach w autobusach',
         'Wyświetlanie przez 2 miesiące',
-        'Przygotowanie reklamy w cenie',
+        'Przygotowanie projektu reklamy w cenie',
         'Emisja na większej liczbie tras',
-        'Priorytetowa obsługa',
+        'Priorytetowa obsługa klienta',
       ],
       popular: true,
       gradient: 'from-primary-600 to-primary-500',
@@ -35,11 +35,11 @@ const Pricing = () => {
       price: 'Indywidualna',
       period: 'elastyczny okres',
       features: [
-        'Pełna flota autobusów',
-        'Przygotowanie reklamy z wariantami',
-        'Elastyczny czas emisji',
+        'Dostęp do pełnej floty autobusów',
+        'Przygotowanie projektu reklamy z wariantami',
+        'Elastyczny czas emisji reklamy',
         'Dedykowany opiekun klienta',
-        'Indywidualna wycena',
+        'Indywidualna wycena dostosowana do potrzeb',
       ],
       popular: false,
       gradient: 'from-primary-600 to-primary-500',
@@ -77,7 +77,7 @@ const Pricing = () => {
             Wybierz <span className="gradient-text">Pakiet</span> Dla Siebie
           </h2>
           <p className="text-lg md:text-xl text-dark-100">
-            Proste pakiety dostosowane do Twoich potrzeb
+            Proste i przejrzyste pakiety dopasowane do Twoich potrzeb
           </p>
         </motion.div>
 
@@ -180,7 +180,7 @@ const Pricing = () => {
             Potrzebujesz indywidualnej oferty?
           </h3>
           <p className="text-dark-100 mb-6">
-            Skontaktuj się z nami, a przygotujemy ofertę dostosowaną do Twoich potrzeb
+            Skontaktuj się z nami, a przygotujemy ofertę dopasowaną do Twoich potrzeb i budżetu
           </p>
           <motion.button
             onClick={scrollToContact}
