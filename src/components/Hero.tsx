@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -50,7 +50,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container-custom relative z-10 py-12 md:py-20">
+      <div className="container-custom relative z-10 py-8 md:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
