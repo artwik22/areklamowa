@@ -40,25 +40,25 @@ const Header = () => {
       }`}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="flex items-center space-x-4 cursor-pointer"
+            className="flex items-center space-x-2 sm:space-x-4 cursor-pointer"
             onClick={() => scrollToSection('#home')}
           >
             <div
-              className="w-16 h-16 rounded-lg flex items-center justify-center relative overflow-hidden"
+              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg flex items-center justify-center relative overflow-hidden"
               style={{
                 background: 'linear-gradient(135deg, #0891b2 0%, #0e7490 100%)',
                 boxShadow: '0 4px 15px rgba(8, 145, 178, 0.4)',
               }}
             >
-              <span className="text-white font-bold text-3xl font-mono relative z-10">A</span>
+              <span className="text-white font-bold text-xl sm:text-2xl md:text-3xl font-mono relative z-10">A</span>
             </div>
-            <span className="text-2xl font-heading font-bold text-gray-900 uppercase tracking-tight">
+            <span className="text-lg sm:text-xl md:text-2xl font-heading font-bold text-gray-900 uppercase tracking-tight hidden sm:block">
               Agencja Reklamowa
             </span>
           </motion.div>
@@ -74,7 +74,7 @@ const Header = () => {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="text-gray-900 hover:text-primary-600 font-semibold transition-all duration-200 px-6 py-3 uppercase text-base tracking-wider rounded-lg relative group bg-gray-50 border-2 border-transparent hover:border-primary-500"
+                className="text-gray-900 hover:text-primary-600 font-semibold transition-all duration-200 px-4 sm:px-6 py-2 sm:py-3 uppercase text-sm sm:text-base tracking-wider rounded-lg relative group bg-gray-50 border-2 border-transparent hover:border-primary-500"
               >
                 {item.name}
               </motion.button>

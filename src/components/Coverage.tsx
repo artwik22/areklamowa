@@ -23,12 +23,12 @@ const Coverage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-8 md:mb-12">
             Gdzie <span className="gradient-text">Działamy</span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
           {counties.map((county, index) => (
             <motion.div
               key={index}
@@ -49,15 +49,15 @@ const Coverage = () => {
               
               <div className="relative z-10 flex flex-col items-center">
                 <div
-                  className="w-20 h-20 rounded-lg mb-6 flex items-center justify-center relative"
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg mb-4 sm:mb-6 flex items-center justify-center relative"
                   style={{
                     background: 'linear-gradient(135deg, #0891b2 0%, #0e7490 100%)',
                     boxShadow: '0 4px 15px rgba(8, 145, 178, 0.4)',
                   }}
                 >
-                  <FiMapPin className="w-10 h-10 text-white" />
+                  <FiMapPin className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
-                <h3 className="text-lg md:text-xl font-heading font-bold text-gray-900 uppercase tracking-tight text-center">
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-heading font-bold text-gray-900 uppercase tracking-tight text-center leading-tight">
                   {county}
                 </h3>
               </div>

@@ -47,14 +47,21 @@
 
 @layer components {
   .btn-primary {
-    @apply px-10 py-5 font-semibold text-white transition-all duration-200 rounded-lg;
-    @apply uppercase tracking-wider text-base;
+    @apply px-8 sm:px-10 py-4 sm:py-5 font-semibold text-white transition-all duration-200 rounded-lg;
+    @apply uppercase tracking-wider text-sm sm:text-base;
     background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
     box-shadow: 0 4px 20px rgba(8, 145, 178, 0.4);
     position: relative;
     overflow: hidden;
-    min-height: 56px;
-    font-size: 18px;
+    min-height: 52px;
+    font-size: 16px;
+  }
+  
+  @media (min-width: 640px) {
+    .btn-primary {
+      min-height: 56px;
+      font-size: 18px;
+    }
   }
   
   .btn-primary::before {
@@ -84,15 +91,22 @@
   }
   
   .btn-secondary {
-    @apply px-10 py-5 font-semibold transition-all duration-200 rounded-lg;
-    @apply uppercase tracking-wider text-base;
+    @apply px-8 sm:px-10 py-4 sm:py-5 font-semibold transition-all duration-200 rounded-lg;
+    @apply uppercase tracking-wider text-sm sm:text-base;
     background: transparent;
     border: 3px solid #0891b2;
     color: #0891b2;
     position: relative;
     overflow: hidden;
-    min-height: 56px;
-    font-size: 18px;
+    min-height: 52px;
+    font-size: 16px;
+  }
+  
+  @media (min-width: 640px) {
+    .btn-secondary {
+      min-height: 56px;
+      font-size: 18px;
+    }
   }
   
   .btn-secondary:hover {
@@ -103,7 +117,7 @@
   }
   
   .section-padding {
-    @apply py-16 md:py-20;
+    @apply py-12 sm:py-16 md:py-20;
   }
   
   .container-custom {
@@ -111,7 +125,7 @@
   }
   
   .card {
-    @apply p-8 rounded-xl;
+    @apply p-6 sm:p-8 rounded-xl;
     background: #ffffff;
     border: 2px solid rgba(229, 231, 235, 0.8);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);

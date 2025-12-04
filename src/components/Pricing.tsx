@@ -81,7 +81,7 @@ const Pricing = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto mb-12">
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
@@ -119,18 +119,18 @@ const Pricing = () => {
                 }}
               />
 
-              <div className={`text-center mb-10 ${pkg.popular ? 'mt-4' : ''}`}>
-                <h3 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6 uppercase tracking-tight">
+              <div className={`text-center mb-8 md:mb-10 ${pkg.popular ? 'mt-4' : ''}`}>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 md:mb-6 uppercase tracking-tight">
                   {pkg.name}
                 </h3>
                 <div>
-                  <div className={`font-bold font-mono mb-3 ${
-                    pkg.price.length > 10 ? 'text-5xl' : 'text-6xl md:text-7xl'
+                  <div className={`font-bold font-mono mb-2 md:mb-3 ${
+                    pkg.price.length > 10 ? 'text-4xl sm:text-5xl' : 'text-5xl sm:text-6xl md:text-7xl'
                   }`}>
                     <span className="gradient-text">{pkg.price}</span>
                   </div>
                   {pkg.period && (
-                    <div className="text-gray-700 text-lg md:text-xl uppercase tracking-wider font-semibold">{pkg.period}</div>
+                    <div className="text-gray-700 text-base sm:text-lg md:text-xl uppercase tracking-wider font-semibold">{pkg.period}</div>
                   )}
                 </div>
               </div>
@@ -148,7 +148,7 @@ const Pricing = () => {
                     <div className={`w-6 h-6 rounded-lg bg-gradient-to-br ${pkg.gradient} flex items-center justify-center flex-shrink-0 mt-0.5`}>
                       <FiCheck className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-gray-700 text-lg md:text-xl leading-relaxed font-medium">{feature}</span>
+                    <span className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed font-medium">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -176,10 +176,10 @@ const Pricing = () => {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="text-center glass rounded-xl p-8 max-w-2xl mx-auto"
         >
-          <h3 className="text-3xl font-heading font-bold text-gray-900 mb-6">
+          <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 md:mb-6">
             Potrzebujesz indywidualnej oferty?
           </h3>
-          <p className="text-gray-700 text-xl mb-8 font-medium">
+          <p className="text-gray-700 text-lg sm:text-xl mb-6 md:mb-8 font-medium">
             Skontaktuj się z nami, a przygotujemy ofertę dopasowaną do Twoich potrzeb i budżetu
           </p>
           <motion.button

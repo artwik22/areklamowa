@@ -39,15 +39,15 @@ const Services = () => {
               Oferta
             </span>
           </motion.span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-6 md:mb-8 px-4">
             Dlaczego Warto Wybrać <span className="gradient-text">Reklamę w Autobusach</span>?
           </h2>
-          <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium px-4">
             Skuteczna forma reklamy, która dociera do tysięcy potencjalnych klientów każdego dnia
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -60,18 +60,18 @@ const Services = () => {
               <div className="relative">
                 {/* Icon with gradient background */}
                 <div
-                  className={`w-24 h-24 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-8 relative overflow-hidden`}
+                  className={`w-20 h-20 sm:w-24 sm:h-24 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 sm:mb-8 relative overflow-hidden`}
                   style={{
                     boxShadow: '0 4px 20px rgba(8, 145, 178, 0.3)',
                   }}
                 >
-                  <service.icon className="w-12 h-12 text-white relative z-10" />
+                  <service.icon className="w-10 h-10 sm:w-12 sm:h-12 text-white relative z-10" />
                 </div>
                 
-                <h3 className="text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-6 uppercase tracking-tight">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 uppercase tracking-tight">
                   {service.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed text-xl font-medium">
+                <p className="text-gray-700 leading-relaxed text-base sm:text-lg md:text-xl font-medium">
                   {service.description}
                 </p>
 
