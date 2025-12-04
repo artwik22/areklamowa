@@ -152,19 +152,6 @@ const Pricing = () => {
                   </motion.li>
                 ))}
               </ul>
-
-              <motion.button
-                onClick={scrollToContact}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className={`w-full py-5 font-semibold transition-all duration-200 rounded-lg uppercase tracking-wider text-base min-h-[56px] ${
-                  pkg.popular
-                    ? 'btn-primary'
-                    : 'border-3 border-primary-500 text-primary-600 hover:border-primary-600 hover:bg-primary-50'
-                }`}
-              >
-                <span>Wybierz Pakiet</span>
-              </motion.button>
             </motion.div>
           ))}
         </div>

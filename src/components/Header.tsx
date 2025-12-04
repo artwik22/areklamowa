@@ -17,7 +17,9 @@ const Header = () => {
   const navItems = [
     { name: 'Co Oferujemy', href: '#services' },
     { name: 'Gdzie Działamy', href: '#coverage' },
+    { name: 'Jak To Działa', href: '#how-it-works' },
     { name: 'Cennik', href: '#pricing' },
+    { name: 'Portfolio', href: '#gallery' },
   ];
 
   const scrollToSection = (href: string) => {
