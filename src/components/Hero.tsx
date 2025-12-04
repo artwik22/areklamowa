@@ -57,12 +57,12 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto text-center"
         >
-          <div className="text-white">
+          <div className="text-gray-900">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 leading-tight"
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-8 leading-tight"
             >
               Zwiększ Sprzedaż
               <br />
@@ -74,17 +74,17 @@ const Hero = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl md:text-2xl mb-6 text-dark-100 font-light leading-relaxed"
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-2xl md:text-3xl mb-8 text-gray-900 font-semibold leading-relaxed"
             >
-              Dotrzyj do <span className="text-primary-500 font-semibold">tysięcy pasażerów</span> każdego dnia
+              Dotrzyj do <span className="text-primary-600 font-bold">tysięcy pasażerów</span> każdego dnia
             </motion.p>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-lg mb-12 text-dark-200 leading-relaxed max-w-3xl mx-auto"
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-xl md:text-2xl mb-12 text-gray-700 leading-relaxed max-w-3xl mx-auto font-medium"
             >
               Twoja reklama na monitorach w autobusach będzie widoczna dla tysięcy potencjalnych klientów. 
               Skuteczna forma dotarcia do lokalnej społeczności. Oferujemy również profesjonalne przygotowanie reklamy.
@@ -93,23 +93,23 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
             >
               <motion.button
                 onClick={() => scrollToSection('#pricing')}
                 whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary flex items-center gap-2 group"
+                whileTap={{ scale: 0.98 }}
+                className="btn-primary flex items-center gap-3 group"
               >
                 <span>Zobacz Cennik</span>
-                <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <FiArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </motion.button>
 
               <motion.button
                 onClick={() => scrollToSection('#contact')}
                 whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.98 }}
                 className="btn-secondary"
               >
                 Skontaktuj Się
@@ -120,8 +120,8 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="grid grid-cols-3 gap-8 mt-20 max-w-3xl mx-auto"
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="grid grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto"
             >
               {[
                 { value: '1000+', label: 'Pasażerów codziennie' },
@@ -130,15 +130,15 @@ const Hero = () => {
               ].map((stat, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.9 + index * 0.1, duration: 0.5 }}
-                  className="glass rounded-2xl p-6"
+                  transition={{ delay: 0.7 + index * 0.1, duration: 0.4 }}
+                  className="glass rounded-2xl p-8 text-center"
                 >
-                  <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
+                  <div className="text-4xl md:text-5xl font-bold gradient-text mb-3">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-dark-300">{stat.label}</div>
+                  <div className="text-base md:text-lg text-gray-900 font-medium">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>

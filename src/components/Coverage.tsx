@@ -23,7 +23,7 @@ const Coverage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-12">
             Gdzie <span className="gradient-text">Działamy</span>
           </h2>
         </motion.div>
@@ -35,31 +35,29 @@ const Coverage = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ delay: index * 0.05, duration: 0.4 }}
+              whileHover={{ scale: 1.03 }}
               className="card card-hover group relative overflow-hidden"
             >
               {/* Gradient overlay on hover */}
-              <motion.div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(14, 116, 144, 0.1) 100%)',
+                  background: 'linear-gradient(135deg, rgba(8, 145, 178, 0.15) 0%, rgba(14, 116, 144, 0.15) 100%)',
                 }}
               />
               
               <div className="relative z-10 flex flex-col items-center">
-                <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                  className="w-16 h-16 rounded-lg mb-4 flex items-center justify-center relative"
+                <div
+                  className="w-20 h-20 rounded-lg mb-6 flex items-center justify-center relative"
                   style={{
                     background: 'linear-gradient(135deg, #0891b2 0%, #0e7490 100%)',
                     boxShadow: '0 4px 15px rgba(8, 145, 178, 0.4)',
                   }}
                 >
-                  <FiMapPin className="w-8 h-8 text-white" />
-                </motion.div>
-                <h3 className="text-base md:text-lg font-heading font-bold text-white uppercase tracking-tight text-center">
+                  <FiMapPin className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-lg md:text-xl font-heading font-bold text-gray-900 uppercase tracking-tight text-center">
                   {county}
                 </h3>
               </div>

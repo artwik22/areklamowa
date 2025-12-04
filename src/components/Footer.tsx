@@ -26,12 +26,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative border-t border-white/10">
+    <footer className="relative border-t border-gray-200 bg-gray-50">
       {/* Gradient overlay */}
       <div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-10"
         style={{
-          background: 'linear-gradient(180deg, transparent 0%, rgba(8, 145, 178, 0.05) 100%)',
+          background: 'linear-gradient(180deg, transparent 0%, rgba(8, 145, 178, 0.03) 100%)',
         }}
       />
 
@@ -54,11 +54,11 @@ const Footer = () => {
               >
                 <span className="text-white font-bold text-2xl font-mono">A</span>
               </div>
-              <span className="text-2xl font-heading font-bold text-white uppercase tracking-tight">
+              <span className="text-2xl font-heading font-bold text-gray-900 uppercase tracking-tight">
                 Agencja Reklamowa
               </span>
             </motion.div>
-            <p className="text-dark-100 mb-6 text-lg leading-relaxed max-w-md">
+            <p className="text-gray-700 mb-6 text-lg leading-relaxed max-w-md">
               Wynajmujemy miejsca reklamowe na monitorach w autobusach.
               Przygotowujemy również profesjonalne reklamy dla Twojej firmy.
             </p>
@@ -73,7 +73,7 @@ const Footer = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className={`w-12 h-12 rounded-lg glass flex items-center justify-center text-dark-100 hover:text-primary-500 transition-all duration-300`}
+                  className={`w-12 h-12 rounded-lg glass flex items-center justify-center text-gray-700 hover:text-primary-600 transition-all duration-300`}
                 >
                   <social.icon className="w-5 h-5" />
                 </motion.a>
@@ -83,7 +83,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-heading font-bold mb-6 uppercase tracking-tight text-lg">
+            <h3 className="text-gray-900 font-heading font-bold mb-6 uppercase tracking-tight text-lg">
               Nawigacja
             </h3>
             <ul className="space-y-3">
@@ -97,7 +97,7 @@ const Footer = () => {
                 >
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-dark-100 hover:text-white transition-colors duration-200 text-base hover:translate-x-1 inline-block"
+                    className="text-gray-700 hover:text-primary-600 transition-colors duration-200 text-base hover:translate-x-1 inline-block"
                   >
                     → {link.name}
                   </button>
@@ -108,7 +108,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-heading font-bold mb-6 uppercase tracking-tight text-lg">
+            <h3 className="text-gray-900 font-heading font-bold mb-6 uppercase tracking-tight text-lg">
               Kontakt
             </h3>
             <ul className="space-y-4">
@@ -119,7 +119,7 @@ const Footer = () => {
               >
                 <a
                   href="mailto:kontakt@agencja-reklamowa.pl"
-                  className="text-dark-100 hover:text-white transition-colors duration-200 text-base block"
+                  className="text-gray-700 hover:text-primary-600 transition-colors duration-200 text-base block"
                 >
                   kontakt@agencja-reklamowa.pl
                 </a>
@@ -132,7 +132,7 @@ const Footer = () => {
               >
                 <a
                   href="tel:+48123456789"
-                  className="text-dark-100 hover:text-white transition-colors duration-200 text-base block"
+                  className="text-gray-700 hover:text-primary-600 transition-colors duration-200 text-base block"
                 >
                   +48 123 456 789
                 </a>
@@ -142,7 +142,7 @@ const Footer = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-dark-100 text-base"
+                className="text-gray-700 text-base"
               >
                 Pomorskie, Polska
               </motion.li>
@@ -155,21 +155,21 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+          className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <p className="text-dark-400 text-sm font-mono">
+          <p className="text-gray-600 text-sm font-mono">
             © {currentYear} Agencja Reklamowa. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex gap-8 text-sm">
             <a
               href="#"
-              className="text-dark-400 hover:text-white transition-colors duration-200 uppercase tracking-wider"
+              className="text-gray-600 hover:text-primary-600 transition-colors duration-200 uppercase tracking-wider"
             >
               Polityka Prywatności
             </a>
             <a
               href="#"
-              className="text-dark-400 hover:text-white transition-colors duration-200 uppercase tracking-wider"
+              className="text-gray-600 hover:text-primary-600 transition-colors duration-200 uppercase tracking-wider"
             >
               Regulamin
             </a>

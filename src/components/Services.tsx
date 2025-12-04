@@ -35,14 +35,14 @@ const Services = () => {
             viewport={{ once: true }}
             className="inline-block px-5 py-2 rounded-full glass mb-6"
           >
-            <span className="text-sm font-medium text-dark-200 uppercase tracking-wider">
+            <span className="text-sm font-medium text-gray-700 uppercase tracking-wider">
               Oferta
             </span>
           </motion.span>
-          <h2 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-8">
             Dlaczego Warto Wybrać <span className="gradient-text">Reklamę w Autobusach</span>?
           </h2>
-          <p className="text-lg md:text-xl text-dark-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
             Skuteczna forma reklamy, która dociera do tysięcy potencjalnych klientów każdego dnia
           </p>
         </motion.div>
@@ -59,24 +59,19 @@ const Services = () => {
             >
               <div className="relative">
                 {/* Icon with gradient background */}
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                  className={`w-20 h-20 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 relative overflow-hidden`}
+                <div
+                  className={`w-24 h-24 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-8 relative overflow-hidden`}
                   style={{
                     boxShadow: '0 4px 20px rgba(8, 145, 178, 0.3)',
                   }}
                 >
-                  <service.icon className="w-10 h-10 text-white relative z-10" />
-                  <motion.div
-                    className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"
-                  />
-                </motion.div>
+                  <service.icon className="w-12 h-12 text-white relative z-10" />
+                </div>
                 
-                <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-6 uppercase tracking-tight">
                   {service.title}
                 </h3>
-                <p className="text-dark-100 leading-relaxed text-lg">
+                <p className="text-gray-700 leading-relaxed text-xl font-medium">
                   {service.description}
                 </p>
 

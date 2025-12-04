@@ -42,14 +42,14 @@ const Contact = () => {
             viewport={{ once: true }}
             className="inline-block px-5 py-2 rounded-full glass mb-6"
           >
-            <span className="text-sm font-medium text-dark-200 uppercase tracking-wider">
+            <span className="text-sm font-medium text-gray-700 uppercase tracking-wider">
               Kontakt
             </span>
           </motion.span>
-          <h2 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-8">
             Skontaktuj Się <span className="gradient-text">Z Nami</span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-100 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto font-medium">
             Zadzwoń lub napisz do nas - chętnie odpowiemy na Twoje pytania
           </p>
         </motion.div>
@@ -76,20 +76,18 @@ const Contact = () => {
                 />
 
                 <div className="relative z-10 text-center">
-                  <motion.div
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                    className={`w-16 h-16 rounded-lg bg-gradient-to-br ${info.gradient} flex items-center justify-center mx-auto mb-4`}
+                  <div
+                    className={`w-20 h-20 rounded-lg bg-gradient-to-br ${info.gradient} flex items-center justify-center mx-auto mb-6`}
                     style={{
                       boxShadow: '0 4px 15px rgba(8, 145, 178, 0.4)',
                     }}
                   >
-                    <info.icon className="w-8 h-8 text-white" />
-                  </motion.div>
-                  <div className="text-sm text-dark-400 mb-2 uppercase tracking-wider">
+                    <info.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-base text-gray-700 mb-3 uppercase tracking-wider font-semibold">
                     {info.label}
                   </div>
-                  <div className="font-semibold text-white text-lg">{info.value}</div>
+                  <div className="font-bold text-gray-900 text-xl md:text-2xl">{info.value}</div>
                 </div>
               </motion.a>
             ))}
@@ -115,20 +113,20 @@ const Contact = () => {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-400 flex items-center justify-center">
                   <FiClock className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="text-2xl font-heading font-bold text-white uppercase tracking-tight">
+                <h4 className="text-3xl font-heading font-bold text-gray-900 uppercase tracking-tight">
                   Godziny Pracy
                 </h4>
               </div>
-              <div className="grid md:grid-cols-2 gap-4 ml-15">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary-500" />
-                  <span className="text-dark-100 font-mono">Poniedziałek - Piątek:</span>
-                  <span className="text-white font-semibold font-mono">9:00 - 17:00</span>
+              <div className="grid md:grid-cols-2 gap-6 mt-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-4 h-4 rounded-full bg-primary-500 flex-shrink-0" />
+                  <span className="text-gray-700 font-mono text-lg md:text-xl">Poniedziałek - Piątek:</span>
+                  <span className="text-gray-900 font-bold font-mono text-xl md:text-2xl">9:00 - 17:00</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary-500" />
-                  <span className="text-dark-100 font-mono">Sobota:</span>
-                  <span className="text-white font-semibold font-mono">10:00 - 14:00</span>
+                <div className="flex items-center gap-4">
+                  <div className="w-4 h-4 rounded-full bg-primary-500 flex-shrink-0" />
+                  <span className="text-gray-700 font-mono text-lg md:text-xl">Sobota:</span>
+                  <span className="text-gray-900 font-bold font-mono text-xl md:text-2xl">10:00 - 14:00</span>
                 </div>
               </div>
             </div>
