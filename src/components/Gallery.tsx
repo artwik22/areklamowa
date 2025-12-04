@@ -176,6 +176,32 @@ const Gallery = () => {
             </motion.div>
           </motion.div>
         )}
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-center mt-12 md:mt-16"
+        >
+          <div className="glass rounded-xl p-8 md:p-12 max-w-3xl mx-auto">
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4">
+              Podoba Ci się nasza praca?
+            </h3>
+            <p className="text-gray-700 text-lg sm:text-xl mb-6 font-medium">
+              Sprawdź nasz cennik i wybierz pakiet dopasowany do Twoich potrzeb
+            </p>
+            <motion.a
+              href="/cennik"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-primary inline-block"
+            >
+              <span>Zobacz Cennik</span>
+            </motion.a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

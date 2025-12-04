@@ -5,9 +5,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
-    { name: 'Co Oferujemy', href: '#services' },
-    { name: 'Gdzie Działamy', href: '#coverage' },
-    { name: 'Cennik', href: '#pricing' },
+    { name: 'Jak to działa', href: '/jak-to-dziala' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Cennik', href: '/cennik' },
     { name: 'Kontakt', href: '#contact' },
   ];
 
@@ -19,6 +19,10 @@ const Footer = () => {
   ];
 
   const scrollToSection = (href: string) => {
+    if (href.startsWith('/')) {
+      window.location.href = href;
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -31,7 +35,7 @@ const Footer = () => {
       <div 
         className="absolute inset-0 opacity-10"
         style={{
-          background: 'linear-gradient(180deg, transparent 0%, rgba(8, 145, 178, 0.03) 100%)',
+          background: 'linear-gradient(180deg, transparent 0%, rgba(30, 64, 175, 0.03) 100%)',
         }}
       />
 
@@ -48,8 +52,8 @@ const Footer = () => {
               <div 
                 className="w-14 h-14 rounded-lg flex items-center justify-center"
                 style={{
-                  background: 'linear-gradient(135deg, #0891b2 0%, #0e7490 100%)',
-                  boxShadow: '0 4px 15px rgba(8, 145, 178, 0.4)',
+                  background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
+                  boxShadow: '0 4px 15px rgba(30, 64, 175, 0.4)',
                 }}
               >
                 <span className="text-white font-bold text-2xl font-mono">A</span>

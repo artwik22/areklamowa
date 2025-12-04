@@ -83,7 +83,7 @@ const WhyUs = () => {
               <div
                 className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gradient-to-br ${advantage.gradient} flex items-center justify-center mb-6`}
                 style={{
-                  boxShadow: '0 4px 20px rgba(8, 145, 178, 0.3)',
+                  boxShadow: '0 4px 20px rgba(30, 64, 175, 0.3)',
                 }}
               >
                 <advantage.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
@@ -99,6 +99,32 @@ const WhyUs = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="text-center mt-12 md:mt-16"
+        >
+          <div className="glass rounded-xl p-8 md:p-12 max-w-3xl mx-auto">
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4">
+              Przekonany? Sprawdź naszą ofertę
+            </h3>
+            <p className="text-gray-700 text-lg sm:text-xl mb-6 font-medium">
+              Zobacz szczegóły naszych usług i dowiedz się, jak możemy pomóc Twojej firmie
+            </p>
+            <motion.a
+              href="/jak-to-dziala"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-primary inline-block"
+            >
+              <span>Jak to działa</span>
+            </motion.a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

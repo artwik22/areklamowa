@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 const Header = () => {
@@ -15,14 +14,16 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Co Oferujemy', href: '#services' },
-    { name: 'Gdzie Działamy', href: '#coverage' },
-    { name: 'Jak To Działa', href: '#how-it-works' },
-    { name: 'Cennik', href: '#pricing' },
-    { name: 'Portfolio', href: '#gallery' },
+    { name: 'Jak to działa', href: '/jak-to-dziala' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Cennik', href: '/cennik' },
   ];
 
   const scrollToSection = (href: string) => {
+    if (href.startsWith('/')) {
+      window.location.href = href;
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -31,67 +32,50 @@ const Header = () => {
   };
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled
-          ? 'glass shadow-2xl bg-white/95'
-          : 'bg-white/80'
+          ? 'glass shadow-lg bg-white/95'
+          : 'bg-white/90'
       }`}
     >
       <nav className="container-custom">
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-            className="flex items-center space-x-2 sm:space-x-4 cursor-pointer"
+          <div
+            className="flex items-center space-x-3 cursor-pointer"
             onClick={() => scrollToSection('#home')}
           >
             <div
-              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg flex items-center justify-center relative overflow-hidden"
+              className="w-12 h-12 rounded-lg flex items-center justify-center"
               style={{
-                background: 'linear-gradient(135deg, #0891b2 0%, #0e7490 100%)',
-                boxShadow: '0 4px 15px rgba(8, 145, 178, 0.4)',
+                background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
               }}
             >
-              <span className="text-white font-bold text-xl sm:text-2xl md:text-3xl font-mono relative z-10">A</span>
+              <span className="text-white font-bold text-xl font-mono">A</span>
             </div>
-            <span className="text-lg sm:text-xl md:text-2xl font-heading font-bold text-gray-900 uppercase tracking-tight hidden sm:block">
+            <span className="text-xl font-heading font-bold text-gray-900 uppercase tracking-tight hidden sm:block">
               Agencja Reklamowa
             </span>
-          </motion.div>
+          </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-4">
-            {navItems.map((item, index) => (
-              <motion.button
+          <div className="hidden md:flex items-center space-x-3">
+            {navItems.map((item) => (
+              <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="text-gray-900 hover:text-primary-600 font-semibold transition-all duration-200 px-4 sm:px-6 py-2 sm:py-3 uppercase text-sm sm:text-base tracking-wider rounded-lg relative group bg-gray-50 border-2 border-transparent hover:border-primary-500"
+                className="text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-200 px-4 py-2 text-base"
               >
                 {item.name}
-              </motion.button>
+              </button>
             ))}
-            <motion.button
+            <button
               onClick={() => scrollToSection('#contact')}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="btn-primary ml-4"
+              className="btn-primary ml-3"
             >
-              <span>Skontaktuj Się</span>
-            </motion.button>
+              <span>Kontakt</span>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -109,50 +93,29 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden pb-4 mt-4 overflow-hidden glass rounded-2xl"
-            >
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: {
-                    opacity: 1,
-                    transition: {
-                      staggerChildren: 0.1,
-                    },
-                  },
-                }}
-                initial="hidden"
-                animate="visible"
-                className="flex flex-col space-y-2 p-4"
-              >
-                {navItems.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.href)}
-                    className="text-left text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-200 px-6 py-4 uppercase text-base tracking-wider rounded-lg hover:bg-gray-100 border-2 border-transparent hover:border-primary-500 min-h-[56px]"
-                  >
-                    {item.name}
-                  </button>
-                ))}
+        {isMobileMenuOpen && (
+          <div className="md:hidden pb-4 mt-4 glass rounded-lg">
+            <div className="flex flex-col space-y-2 p-4">
+              {navItems.map((item) => (
                 <button
-                  onClick={() => scrollToSection('#contact')}
-                  className="btn-primary w-full mt-4"
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-left text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-200 px-4 py-3 text-base"
                 >
-                  <span>Skontaktuj Się</span>
+                  {item.name}
                 </button>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              ))}
+              <button
+                onClick={() => scrollToSection('#contact')}
+                className="btn-primary w-full mt-2"
+              >
+                <span>Kontakt</span>
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
-    </motion.header>
+    </header>
   );
 };
 

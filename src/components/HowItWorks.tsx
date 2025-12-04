@@ -83,7 +83,7 @@ const HowItWorks = () => {
                   <div
                     className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl bg-gradient-to-br from-primary-600 to-primary-500 flex items-center justify-center"
                     style={{
-                      boxShadow: '0 4px 20px rgba(8, 145, 178, 0.3)',
+                      boxShadow: '0 4px 20px rgba(30, 64, 175, 0.3)',
                     }}
                   >
                     <step.icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
@@ -101,6 +101,32 @@ const HowItWorks = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-center mt-12 md:mt-16"
+        >
+          <div className="glass rounded-xl p-8 md:p-12 max-w-3xl mx-auto">
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4">
+              Gotowy na rozpoczęcie?
+            </h3>
+            <p className="text-gray-700 text-lg sm:text-xl mb-6 font-medium">
+              Zobacz przykłady naszych realizacji i przekonaj się o jakości
+            </p>
+            <motion.a
+              href="/portfolio"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-primary inline-block"
+            >
+              <span>Zobacz Portfolio</span>
+            </motion.a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

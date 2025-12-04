@@ -100,8 +100,8 @@ const Pricing = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="absolute -top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full flex items-center gap-2"
                   style={{
-                    background: 'linear-gradient(135deg, #0891b2 0%, #0e7490 100%)',
-                    boxShadow: '0 4px 20px rgba(8, 145, 178, 0.5)',
+                    background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
+                    boxShadow: '0 4px 20px rgba(30, 64, 175, 0.5)',
                   }}
                 >
                   <FiStar className="w-4 h-4 text-white" />
@@ -115,7 +115,7 @@ const Pricing = () => {
               <motion.div
                 className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
                 style={{
-                  background: `linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(14, 116, 144, 0.05) 100%)`,
+                  background: `linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(30, 58, 138, 0.05) 100%)`,
                 }}
               />
 

@@ -24,8 +24,8 @@
     right: 0;
     bottom: 0;
     background-image: 
-      radial-gradient(circle at 20% 30%, rgba(8, 145, 178, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(8, 145, 178, 0.02) 0%, transparent 50%);
+      radial-gradient(circle at 20% 30%, rgba(30, 64, 175, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(30, 64, 175, 0.02) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
   }
@@ -49,8 +49,8 @@
   .btn-primary {
     @apply px-8 sm:px-10 py-4 sm:py-5 font-semibold text-white transition-all duration-200 rounded-lg;
     @apply uppercase tracking-wider text-sm sm:text-base;
-    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
-    box-shadow: 0 4px 20px rgba(8, 145, 178, 0.4);
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    box-shadow: 0 4px 20px rgba(30, 64, 175, 0.4);
     position: relative;
     overflow: hidden;
     min-height: 52px;
@@ -71,7 +71,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #0e7490 0%, #155e75 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
     opacity: 0;
     transition: opacity 0.3s;
   }
@@ -82,7 +82,7 @@
   
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(8, 145, 178, 0.5);
+    box-shadow: 0 6px 30px rgba(30, 64, 175, 0.5);
   }
   
   .btn-primary span {
@@ -94,8 +94,8 @@
     @apply px-8 sm:px-10 py-4 sm:py-5 font-semibold transition-all duration-200 rounded-lg;
     @apply uppercase tracking-wider text-sm sm:text-base;
     background: transparent;
-    border: 3px solid #0891b2;
-    color: #0891b2;
+    border: 3px solid #1e40af;
+    color: #1e40af;
     position: relative;
     overflow: hidden;
     min-height: 52px;
@@ -110,14 +110,14 @@
   }
   
   .btn-secondary:hover {
-    background: rgba(8, 145, 178, 0.1);
+    background: rgba(30, 64, 175, 0.1);
     transform: translateY(-2px);
-    border-color: #0e7490;
-    color: #0e7490;
+    border-color: #1e3a8a;
+    color: #1e3a8a;
   }
   
   .section-padding {
-    @apply py-12 sm:py-16 md:py-20;
+    @apply py-16 sm:py-20 md:py-24;
   }
   
   .container-custom {
@@ -138,8 +138,8 @@
   
   .card-hover:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(8, 145, 178, 0.15);
-    border-color: rgba(8, 145, 178, 0.4);
+    box-shadow: 0 8px 30px rgba(30, 64, 175, 0.15);
+    border-color: rgba(30, 64, 175, 0.4);
     background: #fafafa;
   }
   
@@ -151,7 +151,7 @@
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

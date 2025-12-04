@@ -62,7 +62,7 @@ const Services = () => {
                 <div
                   className={`w-20 h-20 sm:w-24 sm:h-24 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 sm:mb-8 relative overflow-hidden`}
                   style={{
-                    boxShadow: '0 4px 20px rgba(8, 145, 178, 0.3)',
+                    boxShadow: '0 4px 20px rgba(30, 64, 175, 0.3)',
                   }}
                 >
                   <service.icon className="w-10 h-10 sm:w-12 sm:h-12 text-white relative z-10" />

@@ -71,7 +71,7 @@ const Contact = () => {
                 <motion.div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
-                  background: `linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(14, 116, 144, 0.05) 100%)`,
+                  background: `linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(30, 58, 138, 0.05) 100%)`,
                 }}
                 />
 
@@ -79,7 +79,7 @@ const Contact = () => {
                   <div
                     className={`w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-gradient-to-br ${info.gradient} flex items-center justify-center mx-auto mb-4 sm:mb-6`}
                     style={{
-                      boxShadow: '0 4px 15px rgba(8, 145, 178, 0.4)',
+                      boxShadow: '0 4px 15px rgba(30, 64, 175, 0.4)',
                     }}
                   >
                     <info.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
@@ -104,7 +104,7 @@ const Contact = () => {
             <div 
               className="absolute inset-0 opacity-5"
               style={{
-                background: 'linear-gradient(135deg, #0891b2 0%, #0e7490 100%)',
+                background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
               }}
             />
 

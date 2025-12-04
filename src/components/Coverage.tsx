@@ -43,7 +43,7 @@ const Coverage = () => {
               <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(8, 145, 178, 0.15) 0%, rgba(14, 116, 144, 0.15) 100%)',
+                  background: 'linear-gradient(135deg, rgba(30, 64, 175, 0.15) 0%, rgba(30, 58, 138, 0.15) 100%)',
                 }}
               />
               
@@ -51,8 +51,8 @@ const Coverage = () => {
                 <div
                   className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg mb-4 sm:mb-6 flex items-center justify-center relative"
                   style={{
-                    background: 'linear-gradient(135deg, #0891b2 0%, #0e7490 100%)',
-                    boxShadow: '0 4px 15px rgba(8, 145, 178, 0.4)',
+                    background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
+                    boxShadow: '0 4px 15px rgba(30, 64, 175, 0.4)',
                   }}
                 >
                   <FiMapPin className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
@@ -80,19 +80,14 @@ const Coverage = () => {
             <p className="text-gray-700 text-lg sm:text-xl mb-6 font-medium">
               Sprawdź naszą ofertę i dotrzyj do lokalnych klientów
             </p>
-            <motion.button
-              onClick={() => {
-                const element = document.querySelector('#pricing');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
+            <motion.a
+              href="/cennik"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              className="btn-primary"
+              className="btn-primary inline-block"
             >
               <span>Zobacz Cennik</span>
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
       </div>
