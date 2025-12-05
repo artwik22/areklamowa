@@ -193,7 +193,7 @@ const Portfolio = () => {
 
                   <div className="mt-4 text-center text-white">
                     <h3 className="text-2xl font-bold mb-2">{filteredImages[selectedImage].title}</h3>
-                    <p className="text-gray-300">{filteredImages[selectedImage].category}</p>
+                    <p className="text-gray-200">{filteredImages[selectedImage].category}</p>
                   </div>
                 </motion.div>
               </motion.div>

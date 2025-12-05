@@ -89,11 +89,11 @@ const WhyUs = () => {
                 <advantage.icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 uppercase tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 uppercase tracking-tight">
                 {advantage.title}
               </h3>
               
-              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed font-medium">
+              <p className="text-gray-700 dark:text-gray-200 text-lg sm:text-xl leading-relaxed font-medium">
                 {advantage.description}
               </p>
             </motion.div>

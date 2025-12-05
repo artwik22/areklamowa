@@ -19,6 +19,16 @@
   
   .dark body {
     background: #111827;
+    color: #f3f4f6;
+  }
+  
+  /* Zapewnij czytelność wszystkich tekstów w dark mode */
+  .dark * {
+    color: inherit;
+  }
+  
+  .dark p, .dark span, .dark div, .dark a, .dark button, .dark li {
+    color: inherit;
   }
   
   body::before {
@@ -127,6 +137,17 @@
     color: #1e3a8a;
   }
   
+  .dark .btn-secondary {
+    border-color: #60a5fa;
+    color: #60a5fa;
+  }
+  
+  .dark .btn-secondary:hover {
+    background: rgba(96, 165, 250, 0.15);
+    border-color: #93c5fd;
+    color: #93c5fd;
+  }
+  
   .section-padding {
     @apply py-16 sm:py-20 md:py-24;
   }
@@ -180,6 +201,13 @@
   
   .gradient-text {
     background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .dark .gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

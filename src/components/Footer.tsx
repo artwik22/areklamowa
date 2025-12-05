@@ -29,7 +29,7 @@ const Footer = () => {
             >
               kontakt@agencja-reklamowa.pl
             </a>
-            <span className="hidden sm:inline text-gray-400">•</span>
+            <span className="hidden sm:inline text-gray-400 dark:text-gray-400">•</span>
             <a
               href="tel:+48123456789"
               className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
@@ -41,7 +41,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 dark:border-gray-700 mt-6 pt-6 text-center">
-          <p className="text-gray-600 dark:text-gray-400 text-sm">
+          <p className="text-gray-600 dark:text-gray-300 text-sm">
             © {currentYear} Agencja Reklamowa. Wszelkie prawa zastrzeżone.
           </p>
         </div>
