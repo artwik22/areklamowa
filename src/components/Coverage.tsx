@@ -23,7 +23,7 @@ const Coverage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-8 md:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 dark:text-white mb-8 md:mb-12">
             Gdzie <span className="gradient-text">Działamy</span>
           </h2>
         </motion.div>
@@ -57,7 +57,7 @@ const Coverage = () => {
                 >
                   <FiMapPin className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
                 </div>
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-heading font-bold text-gray-900 uppercase tracking-tight text-center leading-tight">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-heading font-bold text-gray-900 dark:text-white uppercase tracking-tight text-center leading-tight">
                   {county}
                 </h3>
               </div>
@@ -74,10 +74,10 @@ const Coverage = () => {
           className="text-center mt-12 md:mt-16"
         >
           <div className="glass rounded-xl p-8 md:p-12 max-w-3xl mx-auto">
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-4">
               Działamy w Twojej okolicy?
             </h3>
-            <p className="text-gray-700 text-lg sm:text-xl mb-6 font-medium">
+            <p className="text-gray-700 dark:text-gray-300 text-lg sm:text-xl mb-6 font-medium">
               Sprawdź naszą ofertę i dotrzyj do lokalnych klientów
             </p>
             <motion.a

@@ -57,7 +57,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto text-center px-4 sm:px-6"
         >
-          <div className="text-gray-900">
+          <div className="text-gray-900 dark:text-gray-100">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -75,16 +75,16 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-2xl sm:text-3xl md:text-4xl mb-6 sm:mb-8 md:mb-10 text-gray-900 font-semibold leading-relaxed"
+              className="text-2xl sm:text-3xl md:text-4xl mb-6 sm:mb-8 md:mb-10 text-gray-900 dark:text-gray-100 font-semibold leading-relaxed"
             >
-              Dotrzyj do <span className="text-primary-600 font-bold">tysięcy pasażerów</span> każdego dnia
+              Dotrzyj do <span className="text-primary-600 dark:text-primary-400 font-bold">tysięcy pasażerów</span> każdego dnia
             </motion.p>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-lg sm:text-xl md:text-2xl mb-10 sm:mb-12 md:mb-16 text-gray-700 leading-relaxed max-w-3xl mx-auto font-medium"
+              className="text-lg sm:text-xl md:text-2xl mb-10 sm:mb-12 md:mb-16 text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto font-medium"
             >
               Twoja reklama na monitorach w autobusach będzie widoczna dla tysięcy potencjalnych klientów. 
               Skuteczna forma dotarcia do lokalnej społeczności. Oferujemy również profesjonalne przygotowanie reklamy.
@@ -138,7 +138,7 @@ const Hero = () => {
                   <div className="text-4xl sm:text-5xl md:text-6xl font-bold gradient-text mb-3 sm:mb-4">
                     {stat.value}
                   </div>
-                  <div className="text-base sm:text-lg md:text-xl text-gray-900 font-medium">{stat.label}</div>
+                  <div className="text-base sm:text-lg md:text-xl text-gray-900 dark:text-gray-100 font-medium">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>

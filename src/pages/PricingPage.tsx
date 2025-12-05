@@ -75,7 +75,7 @@ const PricingPage = () => {
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 sm:gap-3 text-gray-700 hover:text-primary-600 font-semibold transition-colors text-base sm:text-lg min-h-[48px] sm:min-h-[56px]"
+              className="inline-flex items-center gap-2 sm:gap-3 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors text-base sm:text-lg min-h-[48px] sm:min-h-[56px]"
             >
               <FiArrowLeft className="w-6 h-6 sm:w-7 sm:h-7" />
               <span>Powrót do strony głównej</span>
@@ -94,14 +94,14 @@ const PricingPage = () => {
               transition={{ duration: 0.4 }}
               className="inline-block px-5 py-2 rounded-full glass mb-6"
             >
-              <span className="text-sm font-medium text-gray-700 uppercase tracking-wider">
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider">
                 Cennik
               </span>
             </motion.span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 dark:text-white mb-8">
               Wybierz <span className="gradient-text">Pakiet</span> Dla Siebie
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 font-medium">
+            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium">
               Proste i przejrzyste pakiety dopasowane do Twoich potrzeb
             </p>
           </motion.div>
@@ -144,7 +144,7 @@ const PricingPage = () => {
                 />
 
                 <div className={`text-center mb-10 ${pkg.popular ? 'mt-4' : ''}`}>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6 uppercase tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-tight">
                     {pkg.name}
                   </h3>
                   <div>
@@ -154,7 +154,7 @@ const PricingPage = () => {
                       <span className="gradient-text">{pkg.price}</span>
                     </div>
                     {pkg.period && (
-                      <div className="text-gray-700 text-lg md:text-xl uppercase tracking-wider font-semibold">{pkg.period}</div>
+                      <div className="text-gray-700 dark:text-gray-300 text-lg md:text-xl uppercase tracking-wider font-semibold">{pkg.period}</div>
                     )}
                   </div>
                 </div>
@@ -171,7 +171,7 @@ const PricingPage = () => {
                       <div className={`w-6 h-6 rounded-lg bg-gradient-to-br ${pkg.gradient} flex items-center justify-center flex-shrink-0 mt-0.5`}>
                         <FiCheck className="w-4 h-4 text-white" />
                       </div>
-                      <span className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed font-medium">{feature}</span>
+                      <span className="text-gray-700 dark:text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed font-medium">{feature}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -185,10 +185,10 @@ const PricingPage = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-center glass rounded-xl p-8 max-w-2xl mx-auto"
           >
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-6">
               Potrzebujesz indywidualnej oferty?
             </h3>
-            <p className="text-gray-700 text-xl mb-8 font-medium">
+            <p className="text-gray-700 dark:text-gray-300 text-xl mb-8 font-medium">
               Skontaktuj się z nami, a przygotujemy ofertę dopasowaną do Twoich potrzeb i budżetu
             </p>
             <motion.button

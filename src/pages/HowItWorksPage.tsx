@@ -46,7 +46,7 @@ const HowItWorksPage = () => {
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 sm:gap-3 text-gray-700 hover:text-primary-600 font-semibold transition-colors text-base sm:text-lg min-h-[48px] sm:min-h-[56px]"
+              className="inline-flex items-center gap-2 sm:gap-3 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors text-base sm:text-lg min-h-[48px] sm:min-h-[56px]"
             >
               <FiArrowLeft className="w-6 h-6 sm:w-7 sm:h-7" />
               <span>Powrót do strony głównej</span>
@@ -65,14 +65,14 @@ const HowItWorksPage = () => {
               transition={{ duration: 0.4 }}
               className="inline-block px-5 py-2 rounded-full glass mb-6"
             >
-              <span className="text-sm font-medium text-gray-700 uppercase tracking-wider">
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider">
                 Proces
               </span>
             </motion.span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 dark:text-white mb-8">
               Jak to <span className="gradient-text">Działa</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 font-medium max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium max-w-2xl mx-auto">
               Prosty proces w 4 krokach - od kontaktu do emisji Twojej reklamy
             </p>
           </motion.div>
@@ -106,10 +106,10 @@ const HowItWorksPage = () => {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 uppercase tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 uppercase tracking-tight">
                     {step.title}
                   </h3>
-                  <p className="text-gray-700 text-lg sm:text-xl leading-relaxed font-medium">
+                  <p className="text-gray-700 dark:text-gray-300 text-lg sm:text-xl leading-relaxed font-medium">
                     {step.description}
                   </p>
                 </motion.div>
@@ -124,10 +124,10 @@ const HowItWorksPage = () => {
               className="text-center mt-12 md:mt-16"
             >
               <div className="glass rounded-xl p-8 md:p-12 max-w-3xl mx-auto">
-                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-4">
                   Gotowy na rozpoczęcie?
                 </h3>
-                <p className="text-gray-700 text-lg sm:text-xl mb-6 font-medium">
+                <p className="text-gray-700 dark:text-gray-300 text-lg sm:text-xl mb-6 font-medium">
                   Zobacz przykłady naszych realizacji i przekonaj się o jakości
                 </p>
                 <motion.a

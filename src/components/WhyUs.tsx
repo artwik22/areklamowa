@@ -42,7 +42,7 @@ const WhyUs = () => {
   ];
 
   return (
-    <section id="why-us" className="section-padding relative bg-gray-50">
+    <section id="why-us" className="section-padding relative bg-gray-50 dark:bg-gray-800">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -57,14 +57,14 @@ const WhyUs = () => {
             viewport={{ once: true }}
             className="inline-block px-5 py-2 rounded-full glass mb-6"
           >
-            <span className="text-sm font-medium text-gray-700 uppercase tracking-wider">
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider">
               Zalety
             </span>
           </motion.span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-6 md:mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 dark:text-white mb-6 md:mb-8">
             Dlaczego <span className="gradient-text">Warto Nas Wybrać</span>?
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto font-medium px-4">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-medium px-4">
             Co wyróżnia nas na tle konkurencji
           </p>
         </motion.div>
@@ -109,10 +109,10 @@ const WhyUs = () => {
           className="text-center mt-12 md:mt-16"
         >
           <div className="glass rounded-xl p-8 md:p-12 max-w-3xl mx-auto">
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-4">
               Przekonany? Sprawdź naszą ofertę
             </h3>
-            <p className="text-gray-700 text-lg sm:text-xl mb-6 font-medium">
+            <p className="text-gray-700 dark:text-gray-300 text-lg sm:text-xl mb-6 font-medium">
               Zobacz szczegóły naszych usług i dowiedz się, jak możemy pomóc Twojej firmie
             </p>
             <motion.a
