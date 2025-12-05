@@ -71,13 +71,13 @@ const PricingPage = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
-            className="mb-8"
+            className="mb-8 sm:mb-10"
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-gray-700 hover:text-primary-600 font-semibold transition-colors"
+              className="inline-flex items-center gap-2 sm:gap-3 text-gray-700 hover:text-primary-600 font-semibold transition-colors text-base sm:text-lg min-h-[48px] sm:min-h-[56px]"
             >
-              <FiArrowLeft className="w-5 h-5" />
+              <FiArrowLeft className="w-6 h-6 sm:w-7 sm:h-7" />
               <span>Powrót do strony głównej</span>
             </Link>
           </motion.div>
@@ -106,7 +106,7 @@ const PricingPage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-8 max-w-7xl mx-auto mb-12 sm:mb-16">
             {packages.map((pkg, index) => (
               <motion.div
                 key={index}
@@ -114,7 +114,7 @@ const PricingPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.15, duration: 0.6 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className={`relative card group ${
+                className={`relative card group p-6 sm:p-8 md:p-10 ${
                   pkg.popular ? 'ring-2 ring-primary-500' : ''
                 }`}
               >

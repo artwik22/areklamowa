@@ -98,7 +98,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="card relative overflow-hidden"
+            className="card relative overflow-hidden p-6 sm:p-8 md:p-10"
           >
             {/* Gradient background */}
             <div 
@@ -109,28 +109,28 @@ const Contact = () => {
             />
 
             <div className="relative z-10">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-400 flex items-center justify-center flex-shrink-0">
-                  <FiClock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-primary-500 to-primary-400 flex items-center justify-center flex-shrink-0">
+                  <FiClock className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h4 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 uppercase tracking-tight">
+                <h4 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 uppercase tracking-tight">
                   Godziny Pracy
                 </h4>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-4 sm:mt-6">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
-                  <div className="flex items-center gap-2 sm:gap-4 w-full sm:w-auto">
-                    <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-primary-500 flex-shrink-0" />
-                    <span className="text-gray-700 font-mono text-base sm:text-lg md:text-xl">Poniedziałek - Piątek:</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-6 sm:mt-8">
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary-500 flex-shrink-0" />
+                    <span className="text-gray-700 font-mono text-lg sm:text-xl md:text-2xl">Poniedziałek - Piątek:</span>
                   </div>
-                  <span className="text-gray-900 font-bold font-mono text-lg sm:text-xl md:text-2xl ml-5 sm:ml-0">9:00 - 17:00</span>
+                  <span className="text-gray-900 font-bold font-mono text-xl sm:text-2xl md:text-3xl ml-7 sm:ml-9">9:00 - 17:00</span>
                 </div>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
-                  <div className="flex items-center gap-2 sm:gap-4 w-full sm:w-auto">
-                    <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-primary-500 flex-shrink-0" />
-                    <span className="text-gray-700 font-mono text-base sm:text-lg md:text-xl">Sobota:</span>
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary-500 flex-shrink-0" />
+                    <span className="text-gray-700 font-mono text-lg sm:text-xl md:text-2xl">Sobota:</span>
                   </div>
-                  <span className="text-gray-900 font-bold font-mono text-lg sm:text-xl md:text-2xl ml-5 sm:ml-0">10:00 - 14:00</span>
+                  <span className="text-gray-900 font-bold font-mono text-xl sm:text-2xl md:text-3xl ml-7 sm:ml-9">10:00 - 14:00</span>
                 </div>
               </div>
             </div>

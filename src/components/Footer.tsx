@@ -39,8 +39,8 @@ const Footer = () => {
         }}
       />
 
-      <div className="container-custom py-16 relative z-10">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+      <div className="container-custom py-12 sm:py-16 relative z-10">
+        <div className="grid md:grid-cols-4 gap-10 sm:gap-12 mb-10 sm:mb-12">
           {/* Company Info */}
           <div className="md:col-span-2">
             <motion.div

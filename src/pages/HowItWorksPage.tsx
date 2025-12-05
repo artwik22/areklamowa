@@ -42,13 +42,13 @@ const HowItWorksPage = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
-            className="mb-8"
+            className="mb-8 sm:mb-10"
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-gray-700 hover:text-primary-600 font-semibold transition-colors"
+              className="inline-flex items-center gap-2 sm:gap-3 text-gray-700 hover:text-primary-600 font-semibold transition-colors text-base sm:text-lg min-h-[48px] sm:min-h-[56px]"
             >
-              <FiArrowLeft className="w-5 h-5" />
+              <FiArrowLeft className="w-6 h-6 sm:w-7 sm:h-7" />
               <span>Powrót do strony głównej</span>
             </Link>
           </motion.div>
@@ -78,7 +78,7 @@ const HowItWorksPage = () => {
           </motion.div>
 
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-8">
               {steps.map((step, index) => (
                 <motion.div
                   key={index}
@@ -86,30 +86,30 @@ const HowItWorksPage = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.15, duration: 0.6 }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="card text-center relative"
+                  className="card text-center relative p-6 sm:p-8"
                 >
                   {/* Step Number */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary-600 to-primary-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                  <div className="absolute -top-4 -left-4 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-primary-600 to-primary-500 flex items-center justify-center text-white font-bold text-xl sm:text-2xl shadow-lg">
                     {index + 1}
                   </div>
 
                   {/* Icon */}
-                  <div className="mt-8 mb-6 flex justify-center">
+                  <div className="mt-8 sm:mt-10 mb-6 sm:mb-8 flex justify-center">
                     <div
-                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl bg-gradient-to-br from-primary-600 to-primary-500 flex items-center justify-center"
+                      className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl bg-gradient-to-br from-primary-600 to-primary-500 flex items-center justify-center"
                       style={{
                         boxShadow: '0 4px 20px rgba(30, 64, 175, 0.3)',
                       }}
                     >
-                      <step.icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
+                      <step.icon className="w-12 h-12 sm:w-14 sm:h-14 text-white" />
                     </div>
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-gray-900 mb-4 uppercase tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 uppercase tracking-tight">
                     {step.title}
                   </h3>
-                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
+                  <p className="text-gray-700 text-lg sm:text-xl leading-relaxed font-medium">
                     {step.description}
                   </p>
                 </motion.div>

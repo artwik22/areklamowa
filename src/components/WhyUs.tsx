@@ -69,7 +69,7 @@ const WhyUs = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-8 max-w-7xl mx-auto">
           {advantages.map((advantage, index) => (
             <motion.div
               key={index}
@@ -78,22 +78,22 @@ const WhyUs = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="card group"
+              className="card group p-6 sm:p-8"
             >
               <div
-                className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gradient-to-br ${advantage.gradient} flex items-center justify-center mb-6`}
+                className={`w-20 h-20 sm:w-24 sm:h-24 rounded-xl bg-gradient-to-br ${advantage.gradient} flex items-center justify-center mb-6 sm:mb-8`}
                 style={{
                   boxShadow: '0 4px 20px rgba(30, 64, 175, 0.3)',
                 }}
               >
-                <advantage.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                <advantage.icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-heading font-bold text-gray-900 mb-4 uppercase tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 uppercase tracking-tight">
                 {advantage.title}
               </h3>
               
-              <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
+              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed font-medium">
                 {advantage.description}
               </p>
             </motion.div>

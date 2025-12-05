@@ -40,21 +40,21 @@ const Header = () => {
       }`}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-20 md:h-24 px-2 sm:px-0">
           {/* Logo */}
           <div
-            className="flex items-center space-x-3 cursor-pointer"
+            className="flex items-center space-x-2 sm:space-x-3 cursor-pointer"
             onClick={() => scrollToSection('#home')}
           >
             <div
-              className="w-12 h-12 rounded-lg flex items-center justify-center"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center"
               style={{
                 background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
               }}
             >
-              <span className="text-white font-bold text-xl font-mono">A</span>
+              <span className="text-white font-bold text-lg sm:text-xl font-mono">A</span>
             </div>
-            <span className="text-xl font-heading font-bold text-gray-900 uppercase tracking-tight hidden sm:block">
+            <span className="text-base sm:text-xl font-heading font-bold text-gray-900 uppercase tracking-tight hidden sm:block">
               Agencja Reklamowa
             </span>
           </div>
@@ -81,33 +81,33 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-gray-900 p-3 rounded-lg glass min-w-[48px] min-h-[48px] flex items-center justify-center"
+            className="md:hidden text-gray-900 p-3 sm:p-4 rounded-lg glass min-w-[56px] min-h-[56px] flex items-center justify-center"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <FiX className="w-8 h-8" />
+              <FiX className="w-7 h-7 sm:w-8 sm:h-8" />
             ) : (
-              <FiMenu className="w-8 h-8" />
+              <FiMenu className="w-7 h-7 sm:w-8 sm:h-8" />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 mt-4 glass rounded-lg">
-            <div className="flex flex-col space-y-2 p-4">
+          <div className="md:hidden pb-6 mt-4 glass rounded-lg mx-2 sm:mx-0">
+            <div className="flex flex-col space-y-3 p-4 sm:p-6">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-200 px-4 py-3 text-base"
+                  className="text-left text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-200 px-4 py-4 text-lg sm:text-xl min-h-[56px] flex items-center"
                 >
                   {item.name}
                 </button>
               ))}
               <button
                 onClick={() => scrollToSection('#contact')}
-                className="btn-primary w-full mt-2"
+                className="btn-primary w-full mt-2 min-h-[56px] text-lg"
               >
                 <span>Kontakt</span>
               </button>

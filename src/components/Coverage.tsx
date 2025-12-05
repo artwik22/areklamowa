@@ -28,7 +28,7 @@ const Coverage = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {counties.map((county, index) => (
             <motion.div
               key={index}
@@ -37,7 +37,7 @@ const Coverage = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.05, duration: 0.4 }}
               whileHover={{ scale: 1.03 }}
-              className="card card-hover group relative overflow-hidden"
+              className="card card-hover group relative overflow-hidden p-6 sm:p-8"
             >
               {/* Gradient overlay on hover */}
               <div
@@ -49,15 +49,15 @@ const Coverage = () => {
               
               <div className="relative z-10 flex flex-col items-center">
                 <div
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg mb-4 sm:mb-6 flex items-center justify-center relative"
+                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg mb-6 sm:mb-8 flex items-center justify-center relative"
                   style={{
                     background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
                     boxShadow: '0 4px 15px rgba(30, 64, 175, 0.4)',
                   }}
                 >
-                  <FiMapPin className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                  <FiMapPin className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
                 </div>
-                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-heading font-bold text-gray-900 uppercase tracking-tight text-center leading-tight">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-heading font-bold text-gray-900 uppercase tracking-tight text-center leading-tight">
                   {county}
                 </h3>
               </div>

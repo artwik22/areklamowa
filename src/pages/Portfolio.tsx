@@ -57,13 +57,13 @@ const Portfolio = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
-            className="mb-8"
+            className="mb-8 sm:mb-10"
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-gray-700 hover:text-primary-600 font-semibold transition-colors"
+              className="inline-flex items-center gap-2 sm:gap-3 text-gray-700 hover:text-primary-600 font-semibold transition-colors text-base sm:text-lg min-h-[48px] sm:min-h-[56px]"
             >
-              <FiArrowLeft className="w-5 h-5" />
+              <FiArrowLeft className="w-6 h-6 sm:w-7 sm:h-7" />
               <span>Powrót do strony głównej</span>
             </Link>
           </motion.div>
@@ -93,7 +93,7 @@ const Portfolio = () => {
           </motion.div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8 md:mb-12">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-10 sm:mb-12 md:mb-16">
             {categories.map((category) => (
               <motion.button
                 key={category}
@@ -103,7 +103,7 @@ const Portfolio = () => {
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-lg font-semibold text-base transition-all duration-200 ${
+                className={`px-6 sm:px-8 py-4 sm:py-5 rounded-lg font-semibold text-base sm:text-lg transition-all duration-200 min-h-[48px] sm:min-h-[56px] ${
                   selectedCategory === category
                     ? 'bg-primary-500 text-white shadow-lg'
                     : 'bg-white text-gray-700 hover:bg-gray-100 border-2 border-gray-200'
@@ -115,7 +115,7 @@ const Portfolio = () => {
           </div>
 
           {/* Gallery Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 max-w-7xl mx-auto">
             {filteredImages.map((image, index) => (
               <motion.div
                 key={image.id}
