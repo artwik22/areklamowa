@@ -115,10 +115,24 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu - Uproszczone */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden pb-6 mt-4 glass rounded-lg mx-2 sm:mx-0 dark:bg-gray-800/90">
             <div className="flex flex-col space-y-2 p-4 sm:p-6">
+              <Link
+                to="/jak-to-dziala"
+                onClick={() => handleNavClick('/jak-to-dziala')}
+                className="text-left text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors duration-200 px-4 py-4 text-lg sm:text-xl min-h-[56px] flex items-center"
+              >
+                Jak to działa
+              </Link>
+              <Link
+                to="/portfolio"
+                onClick={() => handleNavClick('/portfolio')}
+                className="text-left text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors duration-200 px-4 py-4 text-lg sm:text-xl min-h-[56px] flex items-center"
+              >
+                Portfolio
+              </Link>
               <Link
                 to="/cennik"
                 onClick={() => handleNavClick('/cennik')}
@@ -128,7 +142,7 @@ const Header = () => {
               </Link>
               <button
                 onClick={() => handleNavClick('#contact')}
-                className="btn-primary w-full min-h-[56px] text-lg"
+                className="btn-primary w-full min-h-[56px] text-lg mt-2"
               >
                 <span>Kontakt</span>
               </button>
