@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from '../contexts/ThemeContext';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -117,141 +116,85 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.2 }}
-              className="md:hidden mt-4 mx-2 sm:mx-0"
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 mx-2 sm:mx-0">
+            <div 
+              className="rounded-2xl p-2 backdrop-blur-xl border-2 dark:border-gray-700"
+              style={{
+                background: 'rgba(255, 255, 255, 0.98)',
+                borderColor: 'rgba(229, 231, 235, 0.8)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+              }}
             >
-              <div 
-                className="rounded-2xl p-2 backdrop-blur-xl border-2 dark:border-gray-700"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.98)',
-                  borderColor: 'rgba(229, 231, 235, 0.8)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
-                }}
-              >
-                <style>{`
-                  .dark .rounded-2xl {
-                    background: rgba(31, 41, 55, 0.98) !important;
-                    border-color: rgba(75, 85, 99, 0.5) !important;
-                    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
-                  }
-                `}</style>
-                <div className="dark:hidden flex flex-col space-y-1 p-2">
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.05 }}
-                  >
-                    <Link
-                      to="/jak-to-dziala"
-                      onClick={() => handleNavClick('/jak-to-dziala')}
-                      className="text-left text-gray-900 hover:text-primary-600 font-semibold transition-all duration-200 px-6 py-4 text-lg rounded-xl hover:bg-primary-50 min-h-[56px] flex items-center group"
-                    >
-                      <span className="group-hover:translate-x-1 transition-transform">Jak to działa</span>
-                    </Link>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 }}
-                  >
-                    <Link
-                      to="/portfolio"
-                      onClick={() => handleNavClick('/portfolio')}
-                      className="text-left text-gray-900 hover:text-primary-600 font-semibold transition-all duration-200 px-6 py-4 text-lg rounded-xl hover:bg-primary-50 min-h-[56px] flex items-center group"
-                    >
-                      <span className="group-hover:translate-x-1 transition-transform">Portfolio</span>
-                    </Link>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.15 }}
-                  >
-                    <Link
-                      to="/cennik"
-                      onClick={() => handleNavClick('/cennik')}
-                      className="text-left text-gray-900 hover:text-primary-600 font-semibold transition-all duration-200 px-6 py-4 text-lg rounded-xl hover:bg-primary-50 min-h-[56px] flex items-center group"
-                    >
-                      <span className="group-hover:translate-x-1 transition-transform">Cennik</span>
-                    </Link>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    <button
-                      onClick={() => handleNavClick('#contact')}
-                      className="btn-primary w-full min-h-[56px] text-lg mt-2 rounded-xl"
-                    >
-                      <span>Kontakt</span>
-                    </button>
-                  </motion.div>
-                </div>
-                {/* Dark mode version */}
-                <div className="hidden dark:flex flex-col space-y-1 p-2">
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.05 }}
-                  >
-                    <Link
-                      to="/jak-to-dziala"
-                      onClick={() => handleNavClick('/jak-to-dziala')}
-                      className="text-left text-gray-100 hover:text-primary-400 font-semibold transition-all duration-200 px-6 py-4 text-lg rounded-xl hover:bg-gray-800 min-h-[56px] flex items-center group"
-                    >
-                      <span className="group-hover:translate-x-1 transition-transform">Jak to działa</span>
-                    </Link>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 }}
-                  >
-                    <Link
-                      to="/portfolio"
-                      onClick={() => handleNavClick('/portfolio')}
-                      className="text-left text-gray-100 hover:text-primary-400 font-semibold transition-all duration-200 px-6 py-4 text-lg rounded-xl hover:bg-gray-800 min-h-[56px] flex items-center group"
-                    >
-                      <span className="group-hover:translate-x-1 transition-transform">Portfolio</span>
-                    </Link>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.15 }}
-                  >
-                    <Link
-                      to="/cennik"
-                      onClick={() => handleNavClick('/cennik')}
-                      className="text-left text-gray-100 hover:text-primary-400 font-semibold transition-all duration-200 px-6 py-4 text-lg rounded-xl hover:bg-gray-800 min-h-[56px] flex items-center group"
-                    >
-                      <span className="group-hover:translate-x-1 transition-transform">Cennik</span>
-                    </Link>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    <button
-                      onClick={() => handleNavClick('#contact')}
-                      className="btn-primary w-full min-h-[56px] text-lg mt-2 rounded-xl"
-                    >
-                      <span>Kontakt</span>
-                    </button>
-                  </motion.div>
-                </div>
+              <style>{`
+                .dark .rounded-2xl {
+                  background: rgba(31, 41, 55, 0.98) !important;
+                  border-color: rgba(75, 85, 99, 0.5) !important;
+                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+                }
+              `}</style>
+              <div className="dark:hidden flex flex-col space-y-1 p-2">
+                <Link
+                  to="/jak-to-dziala"
+                  onClick={() => handleNavClick('/jak-to-dziala')}
+                  className="text-left text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-150 px-6 py-4 text-lg rounded-xl hover:bg-primary-50 min-h-[56px] flex items-center"
+                >
+                  Jak to działa
+                </Link>
+                <Link
+                  to="/portfolio"
+                  onClick={() => handleNavClick('/portfolio')}
+                  className="text-left text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-150 px-6 py-4 text-lg rounded-xl hover:bg-primary-50 min-h-[56px] flex items-center"
+                >
+                  Portfolio
+                </Link>
+                <Link
+                  to="/cennik"
+                  onClick={() => handleNavClick('/cennik')}
+                  className="text-left text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-150 px-6 py-4 text-lg rounded-xl hover:bg-primary-50 min-h-[56px] flex items-center"
+                >
+                  Cennik
+                </Link>
+                <button
+                  onClick={() => handleNavClick('#contact')}
+                  className="btn-primary w-full min-h-[56px] text-lg mt-2 rounded-xl"
+                >
+                  <span>Kontakt</span>
+                </button>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              {/* Dark mode version */}
+              <div className="hidden dark:flex flex-col space-y-1 p-2">
+                <Link
+                  to="/jak-to-dziala"
+                  onClick={() => handleNavClick('/jak-to-dziala')}
+                  className="text-left text-gray-100 hover:text-primary-400 font-semibold transition-colors duration-150 px-6 py-4 text-lg rounded-xl hover:bg-gray-800 min-h-[56px] flex items-center"
+                >
+                  Jak to działa
+                </Link>
+                <Link
+                  to="/portfolio"
+                  onClick={() => handleNavClick('/portfolio')}
+                  className="text-left text-gray-100 hover:text-primary-400 font-semibold transition-colors duration-150 px-6 py-4 text-lg rounded-xl hover:bg-gray-800 min-h-[56px] flex items-center"
+                >
+                  Portfolio
+                </Link>
+                <Link
+                  to="/cennik"
+                  onClick={() => handleNavClick('/cennik')}
+                  className="text-left text-gray-100 hover:text-primary-400 font-semibold transition-colors duration-150 px-6 py-4 text-lg rounded-xl hover:bg-gray-800 min-h-[56px] flex items-center"
+                >
+                  Cennik
+                </Link>
+                <button
+                  onClick={() => handleNavClick('#contact')}
+                  className="btn-primary w-full min-h-[56px] text-lg mt-2 rounded-xl"
+                >
+                  <span>Kontakt</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );

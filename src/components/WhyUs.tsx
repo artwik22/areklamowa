@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { FiTarget, FiDollarSign, FiClock, FiUsers, FiAward, FiMapPin } from 'react-icons/fi';
 
 const WhyUs = () => {
@@ -44,27 +43,16 @@ const WhyUs = () => {
   return (
     <section id="why-us" className="section-padding relative bg-gray-50 dark:bg-gray-800">
       <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8 sm:mb-12 md:mb-16"
-        >
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 md:mb-8">
             Dlaczego <span className="gradient-text">Warto Nas Wybrać</span>?
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {advantages.map((advantage, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              whileHover={{ y: -5, scale: 1.02 }}
               className="card group p-5 sm:p-6 md:p-8"
             >
               <div
@@ -83,32 +71,24 @@ const WhyUs = () => {
               <p className="text-gray-700 dark:text-gray-200 text-base sm:text-lg leading-relaxed font-medium">
                 {advantage.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* CTA - hidden on mobile */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="hidden sm:block text-center mt-8 sm:mt-12 md:mt-16"
-        >
+        <div className="hidden sm:block text-center mt-8 sm:mt-12 md:mt-16">
           <div className="glass rounded-xl p-6 sm:p-8 md:p-12 max-w-3xl mx-auto">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               Przekonany? Sprawdź naszą ofertę
             </h3>
-            <motion.a
+            <a
               href="/jak-to-dziala"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
               className="btn-primary inline-block"
             >
               <span>Jak to działa</span>
-            </motion.a>
+            </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

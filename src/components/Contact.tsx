@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 
 const Contact = () => {
@@ -29,38 +28,20 @@ const Contact = () => {
   return (
     <section id="contact" className="section-padding relative">
       <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8 sm:mb-12 md:mb-16"
-        >
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 md:mb-8">
             Skontaktuj Się <span className="gradient-text">Z Nami</span>
           </h2>
-        </motion.div>
+        </div>
 
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
             {contactInfo.map((info, index) => (
-              <motion.a
+              <a
                 key={index}
                 href={info.href}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
                 className="card card-hover group relative overflow-hidden"
               >
-                {/* Gradient overlay on hover */}
-                <motion.div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{
-                  background: `linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(30, 58, 138, 0.05) 100%)`,
-                }}
-                />
 
                 <div className="relative z-10 text-center">
                   <div
@@ -76,17 +57,11 @@ const Contact = () => {
                   </div>
                   <div className="font-bold text-gray-900 dark:text-white text-base sm:text-lg md:text-xl break-words">{info.value}</div>
                 </div>
-              </motion.a>
+              </a>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="card relative overflow-hidden p-6 sm:p-8 md:p-10"
-          >
+          <div className="card relative overflow-hidden p-6 sm:p-8 md:p-10">
             {/* Gradient background */}
             <div 
               className="absolute inset-0 opacity-5"
@@ -110,7 +85,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

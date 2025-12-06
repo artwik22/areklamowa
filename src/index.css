@@ -14,7 +14,20 @@
     background-attachment: fixed;
     font-size: 18px;
     line-height: 1.7;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  /* Optymalizacja renderowania */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* GPU acceleration dla animacji */
+  .card, .btn-primary, .btn-secondary, .glass {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
   
   .dark body {
@@ -76,6 +89,7 @@
     overflow: hidden;
     min-height: 52px;
     font-size: 16px;
+    will-change: transform;
   }
   
   @media (min-width: 640px) {
@@ -94,7 +108,7 @@
     bottom: 0;
     background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.2s;
   }
   
   .btn-primary:hover::before {
@@ -121,6 +135,7 @@
     overflow: hidden;
     min-height: 52px;
     font-size: 16px;
+    will-change: transform;
   }
   
   @media (min-width: 640px) {
@@ -161,7 +176,8 @@
     background: #ffffff;
     border: 2px solid rgba(229, 231, 235, 0.8);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    will-change: transform;
   }
   
   .dark .card {
@@ -171,7 +187,8 @@
   }
   
   .card-hover {
-    @apply transition-all duration-300;
+    @apply transition-all duration-200;
+    will-change: transform;
   }
   
   .card-hover:hover {
@@ -189,8 +206,10 @@
   .glass {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 2px solid rgba(229, 231, 235, 0.8);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateZ(0);
   }
   
   .dark .glass {
