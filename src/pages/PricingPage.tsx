@@ -8,7 +8,7 @@ const PricingPage = () => {
   const packages = [
     {
       name: 'Start',
-      price: '800 zł',
+      price: '800zł',
       period: 'miesięcznie',
       features: [
         'Reklama na monitorach w autobusach',
@@ -21,7 +21,7 @@ const PricingPage = () => {
     },
     {
       name: 'Biznes',
-      price: '1500 zł',
+      price: '1500zł',
       period: '2 miesiące',
       features: [
         'Reklama na monitorach w autobusach',
