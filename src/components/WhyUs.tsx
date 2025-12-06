@@ -49,27 +49,14 @@ const WhyUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <motion.span
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-block px-5 py-2 rounded-full glass mb-6"
-          >
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider">
-              Zalety
-            </span>
-          </motion.span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 dark:text-white mb-6 md:mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 md:mb-8">
             Dlaczego <span className="gradient-text">Warto Nas Wybrać</span>?
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-medium px-4">
-            Co wyróżnia nas na tle konkurencji
-          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {advantages.map((advantage, index) => (
             <motion.div
               key={index}
@@ -78,43 +65,40 @@ const WhyUs = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="card group p-6 sm:p-8"
+              className="card group p-5 sm:p-6 md:p-8"
             >
               <div
-                className={`w-20 h-20 sm:w-24 sm:h-24 rounded-xl bg-gradient-to-br ${advantage.gradient} flex items-center justify-center mb-6 sm:mb-8`}
+                className={`w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl bg-gradient-to-br ${advantage.gradient} flex items-center justify-center mb-4 sm:mb-6`}
                 style={{
                   boxShadow: '0 4px 20px rgba(30, 64, 175, 0.3)',
                 }}
               >
-                <advantage.icon className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
+                <advantage.icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" />
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 uppercase tracking-tight">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 uppercase tracking-tight">
                 {advantage.title}
               </h3>
               
-              <p className="text-gray-700 dark:text-gray-200 text-lg sm:text-xl leading-relaxed font-medium">
+              <p className="text-gray-700 dark:text-gray-200 text-base sm:text-lg leading-relaxed font-medium">
                 {advantage.description}
               </p>
             </motion.div>
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA - hidden on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="text-center mt-12 md:mt-16"
+          className="hidden sm:block text-center mt-8 sm:mt-12 md:mt-16"
         >
-          <div className="glass rounded-xl p-8 md:p-12 max-w-3xl mx-auto">
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-4">
+          <div className="glass rounded-xl p-6 sm:p-8 md:p-12 max-w-3xl mx-auto">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               Przekonany? Sprawdź naszą ofertę
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 text-lg sm:text-xl mb-6 font-medium">
-              Zobacz szczegóły naszych usług i dowiedz się, jak możemy pomóc Twojej firmie
-            </p>
             <motion.a
               href="/jak-to-dziala"
               whileHover={{ scale: 1.05 }}

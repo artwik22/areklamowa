@@ -14,8 +14,8 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24"
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Animated background elements - hidden on mobile */}
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -50,7 +50,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container-custom relative z-10 py-12 sm:py-16 md:py-20">
+      <div className="container-custom relative z-10 py-16 sm:py-20 md:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-8 sm:mb-10 md:mb-12 leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 sm:mb-8 md:mb-10 leading-tight"
             >
               Zwiększ Sprzedaż
               <br />
@@ -75,7 +75,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-2xl sm:text-3xl md:text-4xl mb-6 sm:mb-8 md:mb-10 text-gray-900 dark:text-gray-100 font-semibold leading-relaxed"
+              className="text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6 md:mb-8 text-gray-900 dark:text-gray-100 font-semibold leading-relaxed"
             >
               Dotrzyj do <span className="text-primary-600 dark:text-primary-400 font-bold">tysięcy pasażerów</span> każdego dnia
             </motion.p>
@@ -84,17 +84,16 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-lg sm:text-xl md:text-2xl mb-10 sm:mb-12 md:mb-16 text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto font-medium"
+              className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 md:mb-12 text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto font-medium"
             >
-              Twoja reklama na monitorach w autobusach będzie widoczna dla tysięcy potencjalnych klientów. 
-              Skuteczna forma dotarcia do lokalnej społeczności. Oferujemy również profesjonalne przygotowanie reklamy.
+              Twoja reklama na monitorach w autobusach będzie widoczna dla tysięcy potencjalnych klientów.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center w-full sm:w-auto mb-12 sm:mb-16"
+              className="flex flex-col gap-4 justify-center items-center w-full mb-8 sm:mb-12"
             >
               <motion.a
                 href="/cennik"
@@ -116,12 +115,12 @@ const Hero = () => {
               </motion.button>
             </motion.div>
 
-            {/* Stats */}
+            {/* Stats - hidden on mobile, shown on tablet+ */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto"
+              className="hidden sm:grid grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto"
             >
               {[
                 { value: '1000+', label: 'Pasażerów codziennie' },
@@ -133,12 +132,12 @@ const Hero = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.7 + index * 0.1, duration: 0.4 }}
-                  className="glass rounded-2xl p-8 sm:p-10 text-center"
+                  className="glass rounded-2xl p-6 sm:p-8 text-center"
                 >
-                  <div className="text-4xl sm:text-5xl md:text-6xl font-bold gradient-text mb-3 sm:mb-4">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-2 sm:mb-3">
                     {stat.value}
                   </div>
-                  <div className="text-base sm:text-lg md:text-xl text-gray-900 dark:text-gray-100 font-medium">{stat.label}</div>
+                  <div className="text-sm sm:text-base md:text-lg text-gray-900 dark:text-gray-100 font-medium">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
