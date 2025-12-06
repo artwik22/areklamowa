@@ -15,7 +15,7 @@ const HowItWorksPage = () => {
     {
       icon: FiDollarSign,
       title: 'Wycena',
-      description: 'Przygotujemy dla Ciebie indywidualną wycenę dopasowaną do Twojego budżetu i zakresu kampanii reklamowej.',
+      description: 'Pomozemy wybrac ci idealny dla ciebie pakiet.',
       gradient: 'from-primary-600 to-primary-500',
     },
     {
