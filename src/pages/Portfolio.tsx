@@ -166,12 +166,13 @@ const Portfolio = () => {
                     <FiX className="w-8 h-8" />
                   </button>
                   
-                  <div className="relative">
-                    <img
-                      src={filteredImages[selectedImage].url}
-                      alt={filteredImages[selectedImage].title}
-                      className="w-full h-auto rounded-lg"
-                    />
+                      <div className="relative">
+                        <img
+                          src={filteredImages[selectedImage].url}
+                          alt={filteredImages[selectedImage].title}
+                          loading="eager"
+                          className="w-full h-auto rounded-lg"
+                        />
                     
                     {filteredImages.length > 1 && (
                       <>

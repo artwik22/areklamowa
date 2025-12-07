@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { FiMapPin } from 'react-icons/fi';
 
-const Coverage = () => {
+const Coverage = memo(() => {
   const counties = [
     'Malbork',
     'Sztum',
@@ -62,6 +63,8 @@ const Coverage = () => {
       </div>
     </section>
   );
-};
+});
+
+Coverage.displayName = 'Coverage';
 
 export default Coverage;

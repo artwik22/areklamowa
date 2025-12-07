@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 
-const Contact = () => {
+const Contact = memo(() => {
   const contactInfo = [
     {
       icon: FiMail,
@@ -90,6 +91,8 @@ const Contact = () => {
       </div>
     </section>
   );
-};
+});
+
+Contact.displayName = 'Contact';
 
 export default Contact;

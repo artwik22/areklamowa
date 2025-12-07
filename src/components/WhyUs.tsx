@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { FiTarget, FiDollarSign, FiClock, FiUsers, FiAward, FiMapPin } from 'react-icons/fi';
 
-const WhyUs = () => {
+const WhyUs = memo(() => {
   const advantages = [
     {
       icon: FiMapPin,
@@ -92,7 +93,9 @@ const WhyUs = () => {
       </div>
     </section>
   );
-};
+});
+
+WhyUs.displayName = 'WhyUs';
 
 export default WhyUs;
 

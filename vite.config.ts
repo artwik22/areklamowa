@@ -11,5 +11,15 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'motion-vendor': ['framer-motion'],
+          'icons-vendor': ['react-icons'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
   },
 })
