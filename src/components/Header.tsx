@@ -62,22 +62,34 @@ const Header = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
+            <Link
+              to="/jak-to-dziala"
+              className="text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors duration-200 px-3 lg:px-4 py-2 text-sm lg:text-base"
+            >
+              Jak to działa
+            </Link>
+            <Link
+              to="/portfolio"
+              className="text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors duration-200 px-3 lg:px-4 py-2 text-sm lg:text-base"
+            >
+              Portfolio
+            </Link>
             <Link
               to="/cennik"
-              className="text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors duration-200 px-4 py-2 text-base"
+              className="text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors duration-200 px-3 lg:px-4 py-2 text-sm lg:text-base"
             >
               Cennik
             </Link>
             <button
               onClick={() => scrollToSection('#contact')}
-              className="btn-primary ml-3"
+              className="btn-primary ml-2 lg:ml-3"
             >
               <span>Kontakt</span>
             </button>
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg glass text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center"
+              className="p-2 rounded-lg glass text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center ml-2"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
