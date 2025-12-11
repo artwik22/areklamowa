@@ -54,10 +54,10 @@ const Header = () => {
                 background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
               }}
             >
-              <span className="text-white font-bold text-lg sm:text-xl font-mono">A</span>
+              <span className="text-white font-bold text-lg sm:text-xl font-mono">W</span>
             </div>
             <span className="text-base sm:text-xl font-heading font-bold text-gray-900 dark:text-white uppercase tracking-tight hidden sm:block">
-              Agencja Reklamowa
+              W TRASIE
             </span>
           </Link>
 
