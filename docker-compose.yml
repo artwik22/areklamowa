@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  frontend:
+    # Wskazujemy Dockerowi, aby zbudował obraz z obecnego katalogu
+    build:
+      context: . 
+      dockerfile: Dockerfile
+    
+    container_name: areklamowa-prod
+
+    # Mapowanie portów: 8080 na Twoim Zima OS kieruje do portu 80 w kontenerze
+    ports:
+      - "8080:80" 
+      
+    restart: unless-stopped
