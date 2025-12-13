@@ -148,7 +148,7 @@ const PricingPage = () => {
                     {pkg.name}
                   </h3>
                   <div>
-                    <div className={`font-bold font-mono mb-3 ${
+                    <div className={`font-bold font-mono mb-3 text-center ${
                       pkg.price.length > 10 ? 'text-5xl' : 'text-6xl md:text-7xl'
                     }`}>
                       <span className="gradient-text">{pkg.price}</span>
