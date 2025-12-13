@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   frontend:
-    # Build z Git repository
     build:
       context: https://github.com/TWOJE_USERNAME/TWOJE_REPO.git#main
       dockerfile: Dockerfile
