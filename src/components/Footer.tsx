@@ -17,7 +17,7 @@ const Footer = () => {
               <span className="text-white font-bold text-lg sm:text-xl font-mono">W</span>
             </div>
             <span className="text-lg sm:text-xl font-heading font-bold text-gray-900 uppercase tracking-tight">
-              W TRASIE
+              W Trasie | Media
             </span>
           </div>
 
@@ -42,7 +42,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 mt-6 pt-6 text-center">
           <p className="text-gray-600 text-sm">
-            © {currentYear} W TRASIE. Wszelkie prawa zastrzeżone.
+            © {currentYear} W Trasie | Media. Wszelkie prawa zastrzeżone.
           </p>
         </div>
       </div>

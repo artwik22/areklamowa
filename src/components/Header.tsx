@@ -61,7 +61,7 @@ const Header = () => {
               <span className="text-white font-bold text-lg sm:text-xl font-mono">W</span>
             </div>
             <span className="text-base sm:text-xl font-heading font-bold text-gray-900 uppercase tracking-tight hidden sm:block">
-              W TRASIE
+              W Trasie | Media
             </span>
           </Link>
 
