@@ -47,10 +47,7 @@ const Pricing = () => {
   ];
 
   const scrollToContact = () => {
-    const element = document.querySelector('#contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.location.href = '/kontakt';
   };
 
   return (
@@ -73,7 +70,7 @@ const Pricing = () => {
               Cennik
             </span>
           </motion.span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-4 md:mb-6">
             Wybierz <span className="gradient-text">Pakiet</span> Dla Siebie
           </h2>
           <p className="text-xl md:text-2xl text-gray-700 font-medium">
@@ -123,11 +120,11 @@ const Pricing = () => {
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 md:mb-6 uppercase tracking-tight">
                   {pkg.name}
                 </h3>
-                <div>
-                  <div className={`font-bold font-mono mb-2 md:mb-3 text-center ${
+                <div className="w-full">
+                  <div className={`font-bold font-mono mb-2 md:mb-3 text-center w-full ${
                     pkg.price.length > 10 ? 'text-4xl sm:text-5xl' : 'text-5xl sm:text-6xl md:text-7xl'
                   }`}>
-                    <span className="gradient-text">{pkg.price}</span>
+                    <span className="gradient-text block text-center">{pkg.price}</span>
                   </div>
                   {pkg.period && (
                     <div className="text-gray-700 text-base sm:text-lg md:text-xl uppercase tracking-wider font-semibold">{pkg.period}</div>
@@ -152,6 +149,20 @@ const Pricing = () => {
                   </motion.li>
                 ))}
               </ul>
+
+              {/* CTA Button */}
+              <motion.a
+                href="/kontakt"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className={`w-full py-4 rounded-lg font-semibold text-lg transition-all duration-200 text-center block ${
+                  pkg.popular
+                    ? 'btn-primary'
+                    : 'btn-secondary'
+                }`}
+              >
+                {pkg.price === 'Indywidualna' ? 'Skontaktuj Się' : 'Wybierz Pakiet'}
+              </motion.a>
             </motion.div>
           ))}
         </div>
@@ -169,14 +180,14 @@ const Pricing = () => {
           <p className="text-gray-700 text-lg sm:text-xl mb-6 md:mb-8 font-medium">
             Skontaktuj się z nami, a przygotujemy ofertę dopasowaną do Twoich potrzeb i budżetu
           </p>
-          <motion.button
-            onClick={scrollToContact}
+          <motion.a
+            href="/kontakt"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="btn-secondary"
+            className="btn-secondary inline-block"
           >
             Skontaktuj Się
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>

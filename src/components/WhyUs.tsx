@@ -42,10 +42,10 @@ const WhyUs = memo(() => {
   ];
 
   return (
-    <section id="why-us" className="section-padding relative bg-gray-50 dark:bg-gray-800">
+    <section id="why-us" className="section-padding relative bg-gray-50">
       <div className="container-custom">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 md:mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 md:mb-8">
             Dlaczego <span className="gradient-text">Warto Nas Wybrać</span>?
           </h2>
         </div>
@@ -65,30 +65,15 @@ const WhyUs = memo(() => {
                 <advantage.icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" />
               </div>
 
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 uppercase tracking-tight">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-3 sm:mb-4 uppercase tracking-tight">
                 {advantage.title}
               </h3>
               
-              <p className="text-gray-700 dark:text-gray-200 text-base sm:text-lg leading-relaxed font-medium">
+              <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
                 {advantage.description}
               </p>
             </div>
           ))}
-        </div>
-
-        {/* CTA - hidden on mobile */}
-        <div className="hidden sm:block text-center mt-8 sm:mt-12 md:mt-16">
-          <div className="glass rounded-xl p-6 sm:p-8 md:p-12 max-w-3xl mx-auto">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
-              Przekonany? Sprawdź naszą ofertę
-            </h3>
-            <a
-              href="/jak-to-dziala"
-              className="btn-primary inline-block"
-            >
-              <span>Jak to działa</span>
-            </a>
-          </div>
         </div>
       </div>
     </section>

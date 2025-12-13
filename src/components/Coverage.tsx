@@ -17,7 +17,7 @@ const Coverage = memo(() => {
     <section id="coverage" className="section-padding relative">
       <div className="container-custom">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 md:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-6 sm:mb-8 md:mb-12">
             Gdzie <span className="gradient-text">Działamy</span>
           </h2>
         </div>
@@ -38,7 +38,7 @@ const Coverage = memo(() => {
                 >
                   <FiMapPin className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" />
                 </div>
-                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-heading font-bold text-gray-900 dark:text-white uppercase tracking-tight text-center leading-tight">
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-heading font-bold text-gray-900 uppercase tracking-tight text-center leading-tight">
                   {county}
                 </h3>
               </div>
@@ -49,7 +49,7 @@ const Coverage = memo(() => {
         {/* CTA - hidden on mobile */}
         <div className="hidden sm:block text-center mt-8 sm:mt-12 md:mt-16">
           <div className="glass rounded-xl p-6 sm:p-8 md:p-12 max-w-3xl mx-auto">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-3 sm:mb-4">
               Działamy w Twojej okolicy?
             </h3>
             <a

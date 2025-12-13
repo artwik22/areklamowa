@@ -1,8 +1,7 @@
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import Coverage from '../components/Coverage';
 import WhyUs from '../components/WhyUs';
-import Contact from '../components/Contact';
+import Coverage from '../components/Coverage';
 import Footer from '../components/Footer';
 
 function Home() {
@@ -13,7 +12,6 @@ function Home() {
         <Hero />
         <WhyUs />
         <Coverage />
-        <Contact />
       </main>
       <Footer />
     </div>

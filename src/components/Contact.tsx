@@ -27,12 +27,15 @@ const Contact = memo(() => {
   ];
 
   return (
-    <section id="contact" className="section-padding relative">
+    <section className="section-padding relative">
       <div className="container-custom">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 md:mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 md:mb-8">
             Skontaktuj Się <span className="gradient-text">Z Nami</span>
           </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium max-w-2xl mx-auto">
+            Masz pytania? Chcesz otrzymać bezpłatną wycenę? Napisz lub zadzwoń - odpowiemy w ciągu 24h
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -53,10 +56,10 @@ const Contact = memo(() => {
                   >
                     <info.icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
                   </div>
-                  <div className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider font-semibold">
+                  <div className="text-xs sm:text-sm md:text-base text-gray-700 mb-2 uppercase tracking-wider font-semibold">
                     {info.label}
                   </div>
-                  <div className="font-bold text-gray-900 dark:text-white text-base sm:text-lg md:text-xl break-words">{info.value}</div>
+                  <div className="font-bold text-gray-900 text-base sm:text-lg md:text-xl break-words">{info.value}</div>
                 </div>
               </a>
             ))}
@@ -72,17 +75,17 @@ const Contact = memo(() => {
             />
 
             <div className="relative z-10">
-              <h4 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 dark:text-white uppercase tracking-tight mb-4 sm:mb-6 text-center sm:text-left">
+              <h4 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 uppercase tracking-tight mb-4 sm:mb-6 text-center sm:text-left">
                 Godziny Pracy
               </h4>
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                  <span className="text-gray-700 dark:text-gray-300 font-mono text-base sm:text-lg md:text-xl">Poniedziałek - Piątek:</span>
-                  <span className="text-gray-900 dark:text-white font-bold font-mono text-lg sm:text-xl md:text-2xl">9:00 - 17:00</span>
+                  <span className="text-gray-700 font-mono text-base sm:text-lg md:text-xl">Poniedziałek - Piątek:</span>
+                  <span className="text-gray-900 font-bold font-mono text-lg sm:text-xl md:text-2xl">9:00 - 17:00</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                  <span className="text-gray-700 dark:text-gray-300 font-mono text-base sm:text-lg md:text-xl">Sobota:</span>
-                  <span className="text-gray-900 dark:text-white font-bold font-mono text-lg sm:text-xl md:text-2xl">10:00 - 14:00</span>
+                  <span className="text-gray-700 font-mono text-base sm:text-lg md:text-xl">Sobota:</span>
+                  <span className="text-gray-900 font-bold font-mono text-lg sm:text-xl md:text-2xl">10:00 - 14:00</span>
                 </div>
               </div>
             </div>

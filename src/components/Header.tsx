@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
-import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
-import { useTheme } from '../contexts/ThemeContext';
+import { FiMenu, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,10 +19,16 @@ const Header = () => {
       window.location.href = href;
       return;
     }
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
+    // Jeśli jesteśmy na stronie głównej, scroll do sekcji
+    if (window.location.pathname === '/') {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMobileMenuOpen(false);
+      }
+    } else {
+      // Jeśli jesteśmy na podstronie, przejdź do strony głównej z hash
+      window.location.href = `/${href}`;
     }
   };
 
@@ -37,8 +41,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled
-          ? 'glass shadow-lg bg-white/95 dark:bg-gray-900/95'
-          : 'bg-white/90 dark:bg-gray-900/90'
+          ? 'glass shadow-lg bg-white/95'
+          : 'bg-white/90'
       }`}
     >
       <nav className="container-custom">
@@ -56,7 +60,7 @@ const Header = () => {
             >
               <span className="text-white font-bold text-lg sm:text-xl font-mono">W</span>
             </div>
-            <span className="text-base sm:text-xl font-heading font-bold text-gray-900 dark:text-white uppercase tracking-tight hidden sm:block">
+            <span className="text-base sm:text-xl font-heading font-bold text-gray-900 uppercase tracking-tight hidden sm:block">
               W TRASIE
             </span>
           </Link>
@@ -65,57 +69,35 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
             <Link
               to="/jak-to-dziala"
-              className="text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors duration-200 px-3 lg:px-4 py-2 text-sm lg:text-base"
+              className="text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-200 px-3 lg:px-4 py-2 text-sm lg:text-base"
             >
-              Jak to działa
+              Jak to dziala?
             </Link>
             <Link
               to="/portfolio"
-              className="text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors duration-200 px-3 lg:px-4 py-2 text-sm lg:text-base"
+              className="text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-200 px-3 lg:px-4 py-2 text-sm lg:text-base"
             >
               Portfolio
             </Link>
             <Link
               to="/cennik"
-              className="text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors duration-200 px-3 lg:px-4 py-2 text-sm lg:text-base"
+              className="text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-200 px-3 lg:px-4 py-2 text-sm lg:text-base"
             >
               Cennik
             </Link>
-            <button
-              onClick={() => scrollToSection('#contact')}
+            <Link
+              to="/kontakt"
               className="btn-primary ml-2 lg:ml-3"
             >
               <span>Kontakt</span>
-            </button>
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg glass text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center ml-2"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? (
-                <FiSun className="w-5 h-5" />
-              ) : (
-                <FiMoon className="w-5 h-5" />
-              )}
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
             <button
-              onClick={toggleTheme}
-              className="p-3 rounded-lg glass text-gray-900 dark:text-gray-100 min-w-[48px] min-h-[48px] flex items-center justify-center"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? (
-                <FiSun className="w-6 h-6" />
-              ) : (
-                <FiMoon className="w-6 h-6" />
-              )}
-            </button>
-            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-3 sm:p-4 rounded-lg glass text-gray-900 dark:text-gray-100 min-w-[56px] min-h-[56px] flex items-center justify-center"
+              className="p-3 sm:p-4 rounded-lg glass text-gray-900 min-w-[56px] min-h-[56px] flex items-center justify-center"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -131,27 +113,20 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 mx-2 sm:mx-0">
             <div 
-              className="rounded-2xl p-2 backdrop-blur-xl border-2 dark:border-gray-700"
+              className="rounded-2xl p-2 backdrop-blur-xl border-2"
               style={{
                 background: 'rgba(255, 255, 255, 0.98)',
                 borderColor: 'rgba(229, 231, 235, 0.8)',
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
               }}
             >
-              <style>{`
-                .dark .rounded-2xl {
-                  background: rgba(31, 41, 55, 0.98) !important;
-                  border-color: rgba(75, 85, 99, 0.5) !important;
-                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
-                }
-              `}</style>
-              <div className="dark:hidden flex flex-col space-y-1 p-2">
+              <div className="flex flex-col space-y-1 p-2">
                 <Link
                   to="/jak-to-dziala"
                   onClick={() => handleNavClick('/jak-to-dziala')}
                   className="text-left text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-150 px-6 py-4 text-lg rounded-xl hover:bg-primary-50 min-h-[56px] flex items-center"
                 >
-                  Jak to działa
+                  Jak to dziala?
                 </Link>
                 <Link
                   to="/portfolio"
@@ -162,47 +137,18 @@ const Header = () => {
                 </Link>
                 <Link
                   to="/cennik"
-                  onClick={() => handleNavClick('/cennik')}
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="text-left text-gray-900 hover:text-primary-600 font-semibold transition-colors duration-150 px-6 py-4 text-lg rounded-xl hover:bg-primary-50 min-h-[56px] flex items-center"
                 >
                   Cennik
                 </Link>
-                <button
-                  onClick={() => handleNavClick('#contact')}
+                <Link
+                  to="/kontakt"
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="btn-primary w-full min-h-[56px] text-lg mt-2 rounded-xl"
                 >
                   <span>Kontakt</span>
-                </button>
-              </div>
-              {/* Dark mode version */}
-              <div className="hidden dark:flex flex-col space-y-1 p-2">
-                <Link
-                  to="/jak-to-dziala"
-                  onClick={() => handleNavClick('/jak-to-dziala')}
-                  className="text-left text-gray-100 hover:text-primary-400 font-semibold transition-colors duration-150 px-6 py-4 text-lg rounded-xl hover:bg-gray-800 min-h-[56px] flex items-center"
-                >
-                  Jak to działa
                 </Link>
-                <Link
-                  to="/portfolio"
-                  onClick={() => handleNavClick('/portfolio')}
-                  className="text-left text-gray-100 hover:text-primary-400 font-semibold transition-colors duration-150 px-6 py-4 text-lg rounded-xl hover:bg-gray-800 min-h-[56px] flex items-center"
-                >
-                  Portfolio
-                </Link>
-                <Link
-                  to="/cennik"
-                  onClick={() => handleNavClick('/cennik')}
-                  className="text-left text-gray-100 hover:text-primary-400 font-semibold transition-colors duration-150 px-6 py-4 text-lg rounded-xl hover:bg-gray-800 min-h-[56px] flex items-center"
-                >
-                  Cennik
-                </Link>
-                <button
-                  onClick={() => handleNavClick('#contact')}
-                  className="btn-primary w-full min-h-[56px] text-lg mt-2 rounded-xl"
-                >
-                  <span>Kontakt</span>
-                </button>
               </div>
             </div>
           </div>

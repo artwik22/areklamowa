@@ -50,7 +50,7 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <section className="section-padding relative bg-gray-50 dark:bg-gray-800 pt-24">
+      <section className="section-padding relative bg-gray-50 pt-24">
         <div className="container-custom">
           {/* Back Button */}
           <motion.div
@@ -61,7 +61,7 @@ const Portfolio = () => {
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 sm:gap-3 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors text-base sm:text-lg min-h-[48px] sm:min-h-[56px]"
+              className="inline-flex items-center gap-2 sm:gap-3 text-gray-700 hover:text-primary-600 font-semibold transition-colors text-base sm:text-lg min-h-[48px] sm:min-h-[56px]"
             >
               <FiArrowLeft className="w-6 h-6 sm:w-7 sm:h-7" />
               <span>Powrót do strony głównej</span>
@@ -80,14 +80,14 @@ const Portfolio = () => {
               transition={{ duration: 0.4 }}
               className="inline-block px-5 py-2 rounded-full glass mb-6"
             >
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+              <span className="text-sm font-medium text-gray-700 uppercase tracking-wider">
                 Portfolio
               </span>
             </motion.span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 dark:text-white mb-6 md:mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-6 md:mb-8">
               Przykłady <span className="gradient-text">Naszych Reklam</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-medium px-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto font-medium px-4">
               Zobacz przykłady reklam, które przygotowaliśmy dla naszych klientów
             </p>
           </motion.div>
@@ -106,7 +106,7 @@ const Portfolio = () => {
                 className={`px-6 sm:px-8 py-4 sm:py-5 rounded-lg font-semibold text-base sm:text-lg transition-all duration-200 min-h-[48px] sm:min-h-[56px] ${
                   selectedCategory === category
                     ? 'bg-primary-500 text-white shadow-lg'
-                    : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 border-2 border-gray-200 dark:border-gray-600'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 border-2 border-gray-200'
                 }`}
               >
                 {category}
