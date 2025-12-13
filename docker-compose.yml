@@ -3,12 +3,11 @@ version: '3.8'
 services:
   frontend:
     build:
-      context: https://github.com/TWOJE_USERNAME/TWOJE_REPO.git#main
+      context: .
       dockerfile: Dockerfile
     
     container_name: areklamowa-prod
 
-    # Mapowanie portów: 8080 na Twoim serwerze kieruje do portu 80 w kontenerze
     ports:
       - "8080:80" 
       
