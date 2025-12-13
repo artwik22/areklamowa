@@ -2,14 +2,14 @@ version: '3.8'
 
 services:
   frontend:
-    # Wskazujemy Dockerowi, aby zbudował obraz z obecnego katalogu
+    # Build z Git repository
     build:
-      context: . 
+      context: https://github.com/TWOJE_USERNAME/TWOJE_REPO.git#main
       dockerfile: Dockerfile
     
     container_name: areklamowa-prod
 
-    # Mapowanie portów: 8080 na Twoim Zima OS kieruje do portu 80 w kontenerze
+    # Mapowanie portów: 8080 na Twoim serwerze kieruje do portu 80 w kontenerze
     ports:
       - "8080:80" 
       

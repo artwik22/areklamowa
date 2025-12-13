@@ -46,7 +46,7 @@ const Pricing = () => {
     },
   ];
 
-  const scrollToContact = () => {
+  const _scrollToContact = () => {
     window.location.href = '/kontakt';
   };
 
