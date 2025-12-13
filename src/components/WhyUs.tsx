@@ -1,12 +1,12 @@
 import { memo } from 'react';
-import { FiTarget, FiDollarSign, FiClock, FiUsers, FiAward, FiMapPin } from 'react-icons/fi';
+import { FiTarget, FiDollarSign, FiClock, FiUsers, FiAward, FiTrendingUp } from 'react-icons/fi';
 
 const WhyUs = memo(() => {
   const advantages = [
     {
-      icon: FiMapPin,
-      title: 'Lokalne Doświadczenie',
-      description: 'Znamy lokalny rynek i potrzeby mieszkańców. Działamy w regionie, który znasz najlepiej.',
+      icon: FiTrendingUp,
+      title: 'Duży Zasięg',
+      description: 'Twoja reklama dociera do tysięcy potencjalnych klientów każdego dnia.',
       gradient: 'from-primary-600 to-primary-500',
     },
     {

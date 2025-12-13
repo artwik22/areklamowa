@@ -54,7 +54,7 @@ const Stats = () => {
             </span>
           </motion.span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 md:mb-8">
-            Nasze <span className="text-primary-200">Statystyki</span>
+            Nasze <span className="text-white">Statystyki</span>
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto opacity-90 px-4">
             Liczby, które mówią same za siebie

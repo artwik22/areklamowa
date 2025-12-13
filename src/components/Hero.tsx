@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20"
     >
       {/* Animated background elements - hidden on mobile */}
       <div className="absolute inset-0 overflow-hidden hidden md:block">
@@ -50,30 +50,26 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container-custom relative z-10 py-16 sm:py-20 md:py-24">
+      <div className="container-custom relative z-10 py-4 sm:py-6 md:py-8">
         <div className="max-w-5xl mx-auto text-center px-4 sm:px-6">
           <div className="text-gray-900">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 sm:mb-8 md:mb-10 leading-tight">
-              Zwiększ Sprzedaż
-              <br />
-              <span className="gradient-text">
-                Reklamą w Autobusach
-              </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-2 sm:mb-3 md:mb-4 leading-tight text-gray-900">
+              <div>Twoja reklama wyświetlana na ekranach w autobusach</div>
             </h1>
 
-            <p className="text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6 md:mb-8 text-gray-900 font-semibold leading-relaxed">
-              Dotrzyj do <span className="text-primary-600 font-bold">tysięcy pasażerów</span> każdego dnia
+            <p className="text-xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 md:mb-4 text-primary-600 font-semibold leading-relaxed">
+              Dotrzyj tam gdzie są Twoi klienci
             </p>
             
-            <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 md:mb-12 text-gray-700 leading-relaxed max-w-3xl mx-auto font-medium">
+            <p className="text-base sm:text-lg md:text-xl mb-20 sm:mb-24 md:mb-28 text-gray-700 leading-relaxed max-w-3xl mx-auto font-medium">
               Lokalna reklama docierająca do mieszkańców Twojego regionu podczas ich codziennych podróży.
             </p>
 
             {/* Stats - hidden on mobile, shown on tablet+ */}
-            <div className="hidden sm:grid grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto mb-8 sm:mb-12">
+            <div className="hidden sm:grid grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto mb-6 sm:mb-8">
               {[
                 { value: '2000+', label: 'Pasażerów codziennie' },
-                { value: '8', label: 'Miejscowości' },
+                { value: '8', label: 'Powiatów' },
                 { value: '18h', label: 'Czasu emisji dziennie' },
               ].map((stat, index) => (
                 <div
